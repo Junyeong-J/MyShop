@@ -14,10 +14,10 @@
 		720710CD2C1ADB2600DEB707 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710CC2C1ADB2600DEB707 /* OnBoardingViewController.swift */; };
 		720710D12C1AF4EB00DEB707 /* PointButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710D02C1AF4EB00DEB707 /* PointButton.swift */; };
 		720710D42C1AF60E00DEB707 /* ResourceColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710D32C1AF60E00DEB707 /* ResourceColor.swift */; };
-		720710D72C1AF78200DEB707 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 720710D62C1AF78200DEB707 /* SnapKit */; };
 		720710D92C1AFA7A00DEB707 /* MainPosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710D82C1AFA7A00DEB707 /* MainPosterImageView.swift */; };
 		720710DB2C1AFE2A00DEB707 /* AppTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710DA2C1AFE2A00DEB707 /* AppTitleLabel.swift */; };
 		720710DD2C1AFF2000DEB707 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 720710DC2C1AFF2000DEB707 /* .gitignore */; };
+		720710E02C1B01FD00DEB707 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 720710DF2C1B01FD00DEB707 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720710D72C1AF78200DEB707 /* SnapKit in Frameworks */,
+				720710E02C1B01FD00DEB707 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +122,7 @@
 			);
 			name = MyShopping;
 			packageProductDependencies = (
-				720710D62C1AF78200DEB707 /* SnapKit */,
+				720710DF2C1B01FD00DEB707 /* SnapKit */,
 			);
 			productName = MyShopping;
 			productReference = 720710B52C1AD8EE00DEB707 /* MyShopping.app */;
@@ -153,7 +153,7 @@
 			);
 			mainGroup = 720710AC2C1AD8EE00DEB707;
 			packageReferences = (
-				720710D52C1AF78200DEB707 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				720710DE2C1B01FD00DEB707 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 720710B62C1AD8EE00DEB707 /* Products */;
 			projectDirPath = "";
@@ -415,7 +415,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		720710D52C1AF78200DEB707 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		720710DE2C1B01FD00DEB707 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -426,9 +426,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		720710D62C1AF78200DEB707 /* SnapKit */ = {
+		720710DF2C1B01FD00DEB707 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 720710D52C1AF78200DEB707 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 720710DE2C1B01FD00DEB707 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
