@@ -19,12 +19,15 @@ class OnBoardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         configureHierarchy()
         configureLayout()
         configureUI()
+        
+        addTargets()
     }
     
-    
+   
 }
 
 extension OnBoardingViewController {
@@ -57,4 +60,12 @@ extension OnBoardingViewController {
         view.backgroundColor = Color.white
     }
     
+    func addTargets() {
+        startButton.addTarget(self, action: #selector(startButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func startButtonClicked() {
+        let vc = NicknameViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

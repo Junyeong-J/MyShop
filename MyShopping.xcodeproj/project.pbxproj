@@ -18,6 +18,16 @@
 		720710DB2C1AFE2A00DEB707 /* AppTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710DA2C1AFE2A00DEB707 /* AppTitleLabel.swift */; };
 		720710DD2C1AFF2000DEB707 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 720710DC2C1AFF2000DEB707 /* .gitignore */; };
 		720710E02C1B01FD00DEB707 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 720710DF2C1B01FD00DEB707 /* SnapKit */; };
+		720710E22C1B0ACB00DEB707 /* NicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710E12C1B0ACB00DEB707 /* NicknameViewController.swift */; };
+		720710E42C1B0FA600DEB707 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710E32C1B0FA600DEB707 /* ProfileImage.swift */; };
+		720710E62C1B140400DEB707 /* NicknameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710E52C1B140400DEB707 /* NicknameTextField.swift */; };
+		720710E92C1B149B00DEB707 /* TextFieldPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710E82C1B149B00DEB707 /* TextFieldPlaceholder.swift */; };
+		720710EB2C1B269B00DEB707 /* ResourceFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710EA2C1B269B00DEB707 /* ResourceFont.swift */; };
+		720710ED2C1B26F500DEB707 /* SetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710EC2C1B26F500DEB707 /* SetLabel.swift */; };
+		720710EF2C1B275500DEB707 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710EE2C1B275500DEB707 /* UILabel+Extension.swift */; };
+		720710F22C1C187C00DEB707 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710F12C1C187C00DEB707 /* ProfileViewController.swift */; };
+		720710F52C1C1FA700DEB707 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710F42C1C1FA700DEB707 /* ProfileCollectionViewCell.swift */; };
+		720710F82C1C203500DEB707 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710F72C1C203500DEB707 /* ReuseIdentifierProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +43,16 @@
 		720710D82C1AFA7A00DEB707 /* MainPosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPosterImageView.swift; sourceTree = "<group>"; };
 		720710DA2C1AFE2A00DEB707 /* AppTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTitleLabel.swift; sourceTree = "<group>"; };
 		720710DC2C1AFF2000DEB707 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		720710E12C1B0ACB00DEB707 /* NicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewController.swift; sourceTree = "<group>"; };
+		720710E32C1B0FA600DEB707 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		720710E52C1B140400DEB707 /* NicknameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameTextField.swift; sourceTree = "<group>"; };
+		720710E82C1B149B00DEB707 /* TextFieldPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaceholder.swift; sourceTree = "<group>"; };
+		720710EA2C1B269B00DEB707 /* ResourceFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceFont.swift; sourceTree = "<group>"; };
+		720710EC2C1B26F500DEB707 /* SetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetLabel.swift; sourceTree = "<group>"; };
+		720710EE2C1B275500DEB707 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		720710F12C1C187C00DEB707 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		720710F42C1C1FA700DEB707 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
+		720710F72C1C203500DEB707 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,9 +87,13 @@
 		720710B72C1AD8EE00DEB707 /* MyShopping */ = {
 			isa = PBXGroup;
 			children = (
+				720710F62C1C202700DEB707 /* Protocol */,
+				720710F02C1B275900DEB707 /* Extension */,
+				720710E72C1B146400DEB707 /* Enum */,
 				720710D22C1AF5DC00DEB707 /* Resource */,
 				720710CF2C1ADC0800DEB707 /* CustomView */,
 				720710CE2C1ADB2B00DEB707 /* ViewController */,
+				720710F32C1C1F8900DEB707 /* Cell */,
 				720710B82C1AD8EE00DEB707 /* AppDelegate.swift */,
 				720710BA2C1AD8EE00DEB707 /* SceneDelegate.swift */,
 				720710C12C1AD8EF00DEB707 /* Assets.xcassets */,
@@ -83,6 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				720710CC2C1ADB2600DEB707 /* OnBoardingViewController.swift */,
+				720710E12C1B0ACB00DEB707 /* NicknameViewController.swift */,
+				720710F12C1C187C00DEB707 /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -93,6 +119,9 @@
 				720710D02C1AF4EB00DEB707 /* PointButton.swift */,
 				720710D82C1AFA7A00DEB707 /* MainPosterImageView.swift */,
 				720710DA2C1AFE2A00DEB707 /* AppTitleLabel.swift */,
+				720710E32C1B0FA600DEB707 /* ProfileImage.swift */,
+				720710E52C1B140400DEB707 /* NicknameTextField.swift */,
+				720710EC2C1B26F500DEB707 /* SetLabel.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -101,8 +130,41 @@
 			isa = PBXGroup;
 			children = (
 				720710D32C1AF60E00DEB707 /* ResourceColor.swift */,
+				720710EA2C1B269B00DEB707 /* ResourceFont.swift */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		720710E72C1B146400DEB707 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				720710E82C1B149B00DEB707 /* TextFieldPlaceholder.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		720710F02C1B275900DEB707 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				720710EE2C1B275500DEB707 /* UILabel+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		720710F32C1C1F8900DEB707 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				720710F42C1C1FA700DEB707 /* ProfileCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		720710F62C1C202700DEB707 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				720710F72C1C203500DEB707 /* ReuseIdentifierProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,13 +244,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720710EB2C1B269B00DEB707 /* ResourceFont.swift in Sources */,
 				720710D42C1AF60E00DEB707 /* ResourceColor.swift in Sources */,
+				720710F52C1C1FA700DEB707 /* ProfileCollectionViewCell.swift in Sources */,
 				720710CD2C1ADB2600DEB707 /* OnBoardingViewController.swift in Sources */,
 				720710B92C1AD8EE00DEB707 /* AppDelegate.swift in Sources */,
 				720710D12C1AF4EB00DEB707 /* PointButton.swift in Sources */,
+				720710E42C1B0FA600DEB707 /* ProfileImage.swift in Sources */,
+				720710F82C1C203500DEB707 /* ReuseIdentifierProtocol.swift in Sources */,
+				720710E22C1B0ACB00DEB707 /* NicknameViewController.swift in Sources */,
+				720710E92C1B149B00DEB707 /* TextFieldPlaceholder.swift in Sources */,
 				720710D92C1AFA7A00DEB707 /* MainPosterImageView.swift in Sources */,
 				720710DB2C1AFE2A00DEB707 /* AppTitleLabel.swift in Sources */,
+				720710EF2C1B275500DEB707 /* UILabel+Extension.swift in Sources */,
 				720710BB2C1AD8EE00DEB707 /* SceneDelegate.swift in Sources */,
+				720710F22C1C187C00DEB707 /* ProfileViewController.swift in Sources */,
+				720710ED2C1B26F500DEB707 /* SetLabel.swift in Sources */,
+				720710E62C1B140400DEB707 /* NicknameTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
