@@ -28,6 +28,7 @@ class NicknameViewController: UIViewController {
         configureUI()
         
         tapGesture()
+        addTargets()
         
         textField.delegate = self
         
@@ -116,6 +117,10 @@ extension NicknameViewController {
         print("\(randomImageName)")
     }
     
+    func addTargets() {
+        successButton.addTarget(self, action: #selector(successButtonClicked), for: .touchUpInside)
+    }
+    
     @objc func backButtonClicked() {
         navigationController?.popViewController(animated: true)
     }
@@ -124,6 +129,15 @@ extension NicknameViewController {
         let nv = ProfileViewController()
         nv.imageName = randomImageName
         navigationController?.pushViewController(nv, animated: true)
+    }
+    
+    @objc func successButtonClicked() {
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let rootViewController = TabBarController()
+        sceneDelegate?.window?.rootViewController = rootViewController
+        sceneDelegate?.window?.makeKeyAndVisible()
     }
     
 }

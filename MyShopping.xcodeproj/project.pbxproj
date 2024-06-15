@@ -28,6 +28,14 @@
 		720710F22C1C187C00DEB707 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710F12C1C187C00DEB707 /* ProfileViewController.swift */; };
 		720710F52C1C1FA700DEB707 /* ProfileCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710F42C1C1FA700DEB707 /* ProfileCollectionViewCell.swift */; };
 		720710F82C1C203500DEB707 /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710F72C1C203500DEB707 /* ReuseIdentifierProtocol.swift */; };
+		720710FB2C1C80BA00DEB707 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710FA2C1C80BA00DEB707 /* TabBarController.swift */; };
+		720710FD2C1C818700DEB707 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710FC2C1C818600DEB707 /* SearchViewController.swift */; };
+		720710FF2C1C819400DEB707 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720710FE2C1C819400DEB707 /* SettingViewController.swift */; };
+		720711012C1D5A3A00DEB707 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711002C1D5A3A00DEB707 /* UserDefaultsManager.swift */; };
+		720711032C1D5BD500DEB707 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711022C1D5BD500DEB707 /* SearchTableViewCell.swift */; };
+		720711052C1D6DDB00DEB707 /* EmptyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711042C1D6DDB00DEB707 /* EmptyImage.swift */; };
+		7207110B2C1D7A8F00DEB707 /* RecentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207110A2C1D7A8F00DEB707 /* RecentImage.swift */; };
+		7207110D2C1D7CAD00DEB707 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207110C2C1D7CAD00DEB707 /* DeleteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +61,14 @@
 		720710F12C1C187C00DEB707 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		720710F42C1C1FA700DEB707 /* ProfileCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionViewCell.swift; sourceTree = "<group>"; };
 		720710F72C1C203500DEB707 /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
+		720710FA2C1C80BA00DEB707 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		720710FC2C1C818600DEB707 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		720710FE2C1C819400DEB707 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		720711002C1D5A3A00DEB707 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		720711022C1D5BD500DEB707 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		720711042C1D6DDB00DEB707 /* EmptyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyImage.swift; sourceTree = "<group>"; };
+		7207110A2C1D7A8F00DEB707 /* RecentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentImage.swift; sourceTree = "<group>"; };
+		7207110C2C1D7CAD00DEB707 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +122,12 @@
 		720710CE2C1ADB2B00DEB707 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				720710F92C1C809200DEB707 /* TabBar */,
 				720710CC2C1ADB2600DEB707 /* OnBoardingViewController.swift */,
 				720710E12C1B0ACB00DEB707 /* NicknameViewController.swift */,
 				720710F12C1C187C00DEB707 /* ProfileViewController.swift */,
+				720710FC2C1C818600DEB707 /* SearchViewController.swift */,
+				720710FE2C1C819400DEB707 /* SettingViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -116,10 +135,9 @@
 		720710CF2C1ADC0800DEB707 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				720710D02C1AF4EB00DEB707 /* PointButton.swift */,
-				720710D82C1AFA7A00DEB707 /* MainPosterImageView.swift */,
+				720711072C1D788A00DEB707 /* Button */,
+				720711062C1D6E4200DEB707 /* ImageView */,
 				720710DA2C1AFE2A00DEB707 /* AppTitleLabel.swift */,
-				720710E32C1B0FA600DEB707 /* ProfileImage.swift */,
 				720710E52C1B140400DEB707 /* NicknameTextField.swift */,
 				720710EC2C1B26F500DEB707 /* SetLabel.swift */,
 			);
@@ -131,6 +149,7 @@
 			children = (
 				720710D32C1AF60E00DEB707 /* ResourceColor.swift */,
 				720710EA2C1B269B00DEB707 /* ResourceFont.swift */,
+				720711002C1D5A3A00DEB707 /* UserDefaultsManager.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -155,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				720710F42C1C1FA700DEB707 /* ProfileCollectionViewCell.swift */,
+				720711022C1D5BD500DEB707 /* SearchTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -165,6 +185,34 @@
 				720710F72C1C203500DEB707 /* ReuseIdentifierProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		720710F92C1C809200DEB707 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				720710FA2C1C80BA00DEB707 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		720711062C1D6E4200DEB707 /* ImageView */ = {
+			isa = PBXGroup;
+			children = (
+				720710D82C1AFA7A00DEB707 /* MainPosterImageView.swift */,
+				720710E32C1B0FA600DEB707 /* ProfileImage.swift */,
+				720711042C1D6DDB00DEB707 /* EmptyImage.swift */,
+				7207110A2C1D7A8F00DEB707 /* RecentImage.swift */,
+			);
+			path = ImageView;
+			sourceTree = "<group>";
+		};
+		720711072C1D788A00DEB707 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				720710D02C1AF4EB00DEB707 /* PointButton.swift */,
+				7207110C2C1D7CAD00DEB707 /* DeleteButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,9 +295,12 @@
 				720710EB2C1B269B00DEB707 /* ResourceFont.swift in Sources */,
 				720710D42C1AF60E00DEB707 /* ResourceColor.swift in Sources */,
 				720710F52C1C1FA700DEB707 /* ProfileCollectionViewCell.swift in Sources */,
+				720710FB2C1C80BA00DEB707 /* TabBarController.swift in Sources */,
+				720710FD2C1C818700DEB707 /* SearchViewController.swift in Sources */,
 				720710CD2C1ADB2600DEB707 /* OnBoardingViewController.swift in Sources */,
 				720710B92C1AD8EE00DEB707 /* AppDelegate.swift in Sources */,
 				720710D12C1AF4EB00DEB707 /* PointButton.swift in Sources */,
+				720711052C1D6DDB00DEB707 /* EmptyImage.swift in Sources */,
 				720710E42C1B0FA600DEB707 /* ProfileImage.swift in Sources */,
 				720710F82C1C203500DEB707 /* ReuseIdentifierProtocol.swift in Sources */,
 				720710E22C1B0ACB00DEB707 /* NicknameViewController.swift in Sources */,
@@ -257,10 +308,15 @@
 				720710D92C1AFA7A00DEB707 /* MainPosterImageView.swift in Sources */,
 				720710DB2C1AFE2A00DEB707 /* AppTitleLabel.swift in Sources */,
 				720710EF2C1B275500DEB707 /* UILabel+Extension.swift in Sources */,
+				720711032C1D5BD500DEB707 /* SearchTableViewCell.swift in Sources */,
+				720710FF2C1C819400DEB707 /* SettingViewController.swift in Sources */,
 				720710BB2C1AD8EE00DEB707 /* SceneDelegate.swift in Sources */,
+				720711012C1D5A3A00DEB707 /* UserDefaultsManager.swift in Sources */,
+				7207110B2C1D7A8F00DEB707 /* RecentImage.swift in Sources */,
 				720710F22C1C187C00DEB707 /* ProfileViewController.swift in Sources */,
 				720710ED2C1B26F500DEB707 /* SetLabel.swift in Sources */,
 				720710E62C1B140400DEB707 /* NicknameTextField.swift in Sources */,
+				7207110D2C1D7CAD00DEB707 /* DeleteButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
