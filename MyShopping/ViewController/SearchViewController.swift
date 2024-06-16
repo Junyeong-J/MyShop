@@ -98,6 +98,10 @@ extension SearchViewController: UISearchBarDelegate {
         ud.saveSearchWord(word: searchText)
         tableView.reloadData()
         screenLayout()
+        
+        let vc = SearchResultViewController()
+        vc.navigationTitle = searchText
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

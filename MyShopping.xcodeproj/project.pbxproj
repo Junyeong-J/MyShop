@@ -36,6 +36,19 @@
 		720711052C1D6DDB00DEB707 /* EmptyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711042C1D6DDB00DEB707 /* EmptyImage.swift */; };
 		7207110B2C1D7A8F00DEB707 /* RecentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207110A2C1D7A8F00DEB707 /* RecentImage.swift */; };
 		7207110D2C1D7CAD00DEB707 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207110C2C1D7CAD00DEB707 /* DeleteButton.swift */; };
+		7207110F2C1DE52F00DEB707 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207110E2C1DE52F00DEB707 /* SettingTableViewCell.swift */; };
+		720711112C1DED0F00DEB707 /* ChevronImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711102C1DED0F00DEB707 /* ChevronImage.swift */; };
+		720711132C1DF51D00DEB707 /* ProfileViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711122C1DF51D00DEB707 /* ProfileViewTableViewCell.swift */; };
+		720711152C1DFF3B00DEB707 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711142C1DFF3B00DEB707 /* Setting.swift */; };
+		720711172C1E882A00DEB707 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711162C1E882A00DEB707 /* SearchResultViewController.swift */; };
+		720711192C1E8C9900DEB707 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711182C1E8C9900DEB707 /* CategoryButton.swift */; };
+		7207111B2C1E94A400DEB707 /* SearchResultCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207111A2C1E94A400DEB707 /* SearchResultCollectionViewCell.swift */; };
+		7207111D2C1E9C9700DEB707 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207111C2C1E9C9700DEB707 /* APIKey.swift */; };
+		720711202C1E9D9700DEB707 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7207111F2C1E9D9700DEB707 /* Alamofire */; };
+		720711222C1E9DD400DEB707 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711212C1E9DD400DEB707 /* Shop.swift */; };
+		720711252C1EA33000DEB707 /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711242C1EA33000DEB707 /* ProductImage.swift */; };
+		720711282C1EA73900DEB707 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 720711272C1EA73900DEB707 /* Kingfisher */; };
+		7207112A2C1EAEA600DEB707 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711292C1EAEA600DEB707 /* Sort.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +82,17 @@
 		720711042C1D6DDB00DEB707 /* EmptyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyImage.swift; sourceTree = "<group>"; };
 		7207110A2C1D7A8F00DEB707 /* RecentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentImage.swift; sourceTree = "<group>"; };
 		7207110C2C1D7CAD00DEB707 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		7207110E2C1DE52F00DEB707 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		720711102C1DED0F00DEB707 /* ChevronImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronImage.swift; sourceTree = "<group>"; };
+		720711122C1DF51D00DEB707 /* ProfileViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewCell.swift; sourceTree = "<group>"; };
+		720711142C1DFF3B00DEB707 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		720711162C1E882A00DEB707 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
+		720711182C1E8C9900DEB707 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
+		7207111A2C1E94A400DEB707 /* SearchResultCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCollectionViewCell.swift; sourceTree = "<group>"; };
+		7207111C2C1E9C9700DEB707 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		720711212C1E9DD400DEB707 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		720711242C1EA33000DEB707 /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
+		720711292C1EAEA600DEB707 /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +100,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720711282C1EA73900DEB707 /* Kingfisher in Frameworks */,
 				720710E02C1B01FD00DEB707 /* SnapKit in Frameworks */,
+				720711202C1E9D9700DEB707 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +129,7 @@
 		720710B72C1AD8EE00DEB707 /* MyShopping */ = {
 			isa = PBXGroup;
 			children = (
+				720711232C1E9DDC00DEB707 /* Struct */,
 				720710F62C1C202700DEB707 /* Protocol */,
 				720710F02C1B275900DEB707 /* Extension */,
 				720710E72C1B146400DEB707 /* Enum */,
@@ -115,6 +142,7 @@
 				720710C12C1AD8EF00DEB707 /* Assets.xcassets */,
 				720710C32C1AD8EF00DEB707 /* LaunchScreen.storyboard */,
 				720710C62C1AD8EF00DEB707 /* Info.plist */,
+				7207111C2C1E9C9700DEB707 /* APIKey.swift */,
 			);
 			path = MyShopping;
 			sourceTree = "<group>";
@@ -128,6 +156,7 @@
 				720710F12C1C187C00DEB707 /* ProfileViewController.swift */,
 				720710FC2C1C818600DEB707 /* SearchViewController.swift */,
 				720710FE2C1C819400DEB707 /* SettingViewController.swift */,
+				720711162C1E882A00DEB707 /* SearchResultViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -158,6 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				720710E82C1B149B00DEB707 /* TextFieldPlaceholder.swift */,
+				720711142C1DFF3B00DEB707 /* Setting.swift */,
+				720711292C1EAEA600DEB707 /* Sort.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -175,6 +206,9 @@
 			children = (
 				720710F42C1C1FA700DEB707 /* ProfileCollectionViewCell.swift */,
 				720711022C1D5BD500DEB707 /* SearchTableViewCell.swift */,
+				720711122C1DF51D00DEB707 /* ProfileViewTableViewCell.swift */,
+				7207110E2C1DE52F00DEB707 /* SettingTableViewCell.swift */,
+				7207111A2C1E94A400DEB707 /* SearchResultCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -202,6 +236,8 @@
 				720710E32C1B0FA600DEB707 /* ProfileImage.swift */,
 				720711042C1D6DDB00DEB707 /* EmptyImage.swift */,
 				7207110A2C1D7A8F00DEB707 /* RecentImage.swift */,
+				720711102C1DED0F00DEB707 /* ChevronImage.swift */,
+				720711242C1EA33000DEB707 /* ProductImage.swift */,
 			);
 			path = ImageView;
 			sourceTree = "<group>";
@@ -211,8 +247,17 @@
 			children = (
 				720710D02C1AF4EB00DEB707 /* PointButton.swift */,
 				7207110C2C1D7CAD00DEB707 /* DeleteButton.swift */,
+				720711182C1E8C9900DEB707 /* CategoryButton.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		720711232C1E9DDC00DEB707 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				720711212C1E9DD400DEB707 /* Shop.swift */,
+			);
+			path = Struct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +278,8 @@
 			name = MyShopping;
 			packageProductDependencies = (
 				720710DF2C1B01FD00DEB707 /* SnapKit */,
+				7207111F2C1E9D9700DEB707 /* Alamofire */,
+				720711272C1EA73900DEB707 /* Kingfisher */,
 			);
 			productName = MyShopping;
 			productReference = 720710B52C1AD8EE00DEB707 /* MyShopping.app */;
@@ -264,6 +311,8 @@
 			mainGroup = 720710AC2C1AD8EE00DEB707;
 			packageReferences = (
 				720710DE2C1B01FD00DEB707 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7207111E2C1E9D9700DEB707 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				720711262C1EA73900DEB707 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 720710B62C1AD8EE00DEB707 /* Products */;
 			projectDirPath = "";
@@ -292,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				720711132C1DF51D00DEB707 /* ProfileViewTableViewCell.swift in Sources */,
 				720710EB2C1B269B00DEB707 /* ResourceFont.swift in Sources */,
 				720710D42C1AF60E00DEB707 /* ResourceColor.swift in Sources */,
 				720710F52C1C1FA700DEB707 /* ProfileCollectionViewCell.swift in Sources */,
@@ -300,7 +350,10 @@
 				720710CD2C1ADB2600DEB707 /* OnBoardingViewController.swift in Sources */,
 				720710B92C1AD8EE00DEB707 /* AppDelegate.swift in Sources */,
 				720710D12C1AF4EB00DEB707 /* PointButton.swift in Sources */,
+				7207110F2C1DE52F00DEB707 /* SettingTableViewCell.swift in Sources */,
 				720711052C1D6DDB00DEB707 /* EmptyImage.swift in Sources */,
+				7207111B2C1E94A400DEB707 /* SearchResultCollectionViewCell.swift in Sources */,
+				720711192C1E8C9900DEB707 /* CategoryButton.swift in Sources */,
 				720710E42C1B0FA600DEB707 /* ProfileImage.swift in Sources */,
 				720710F82C1C203500DEB707 /* ReuseIdentifierProtocol.swift in Sources */,
 				720710E22C1B0ACB00DEB707 /* NicknameViewController.swift in Sources */,
@@ -310,13 +363,20 @@
 				720710EF2C1B275500DEB707 /* UILabel+Extension.swift in Sources */,
 				720711032C1D5BD500DEB707 /* SearchTableViewCell.swift in Sources */,
 				720710FF2C1C819400DEB707 /* SettingViewController.swift in Sources */,
+				720711222C1E9DD400DEB707 /* Shop.swift in Sources */,
 				720710BB2C1AD8EE00DEB707 /* SceneDelegate.swift in Sources */,
 				720711012C1D5A3A00DEB707 /* UserDefaultsManager.swift in Sources */,
+				720711172C1E882A00DEB707 /* SearchResultViewController.swift in Sources */,
 				7207110B2C1D7A8F00DEB707 /* RecentImage.swift in Sources */,
+				720711252C1EA33000DEB707 /* ProductImage.swift in Sources */,
 				720710F22C1C187C00DEB707 /* ProfileViewController.swift in Sources */,
+				7207112A2C1EAEA600DEB707 /* Sort.swift in Sources */,
 				720710ED2C1B26F500DEB707 /* SetLabel.swift in Sources */,
+				7207111D2C1E9C9700DEB707 /* APIKey.swift in Sources */,
+				720711152C1DFF3B00DEB707 /* Setting.swift in Sources */,
 				720710E62C1B140400DEB707 /* NicknameTextField.swift in Sources */,
 				7207110D2C1D7CAD00DEB707 /* DeleteButton.swift in Sources */,
+				720711112C1DED0F00DEB707 /* ChevronImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +611,22 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		7207111E2C1E9D9700DEB707 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		720711262C1EA73900DEB707 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -558,6 +634,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 720710DE2C1B01FD00DEB707 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		7207111F2C1E9D9700DEB707 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7207111E2C1E9D9700DEB707 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		720711272C1EA73900DEB707 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 720711262C1EA73900DEB707 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
