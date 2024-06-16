@@ -66,6 +66,7 @@ extension OnBoardingViewController {
     
     @objc func startButtonClicked() {
         let vc = NicknameViewController()
+        vc.viewtype = .new
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -26,6 +26,7 @@ struct ShopItems: Decodable {
     let image: String
     let lprice: String
     let mallName: String
+    let productId: String
     
     var formatPrice: String {
         if let price = Int(lprice){
@@ -33,5 +34,9 @@ struct ShopItems: Decodable {
         } else {
             return "0원"
         }
+    }
+    
+    var setTitle: String {
+        return title.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
     }
 }

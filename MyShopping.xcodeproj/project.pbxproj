@@ -49,6 +49,9 @@
 		720711252C1EA33000DEB707 /* ProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711242C1EA33000DEB707 /* ProductImage.swift */; };
 		720711282C1EA73900DEB707 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 720711272C1EA73900DEB707 /* Kingfisher */; };
 		7207112A2C1EAEA600DEB707 /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711292C1EAEA600DEB707 /* Sort.swift */; };
+		7207112C2C1F2EFB00DEB707 /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207112B2C1F2EFB00DEB707 /* DetailWebViewController.swift */; };
+		7207112E2C1F3BBA00DEB707 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207112D2C1F3BBA00DEB707 /* LikeButton.swift */; };
+		720711302C1F5EE700DEB707 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207112F2C1F5EE700DEB707 /* ViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +96,9 @@
 		720711212C1E9DD400DEB707 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		720711242C1EA33000DEB707 /* ProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductImage.swift; sourceTree = "<group>"; };
 		720711292C1EAEA600DEB707 /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
+		7207112B2C1F2EFB00DEB707 /* DetailWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
+		7207112D2C1F3BBA00DEB707 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
+		7207112F2C1F5EE700DEB707 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,7 @@
 				720710FC2C1C818600DEB707 /* SearchViewController.swift */,
 				720710FE2C1C819400DEB707 /* SettingViewController.swift */,
 				720711162C1E882A00DEB707 /* SearchResultViewController.swift */,
+				7207112B2C1F2EFB00DEB707 /* DetailWebViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -189,6 +196,7 @@
 				720710E82C1B149B00DEB707 /* TextFieldPlaceholder.swift */,
 				720711142C1DFF3B00DEB707 /* Setting.swift */,
 				720711292C1EAEA600DEB707 /* Sort.swift */,
+				7207112F2C1F5EE700DEB707 /* ViewType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -248,6 +256,7 @@
 				720710D02C1AF4EB00DEB707 /* PointButton.swift */,
 				7207110C2C1D7CAD00DEB707 /* DeleteButton.swift */,
 				720711182C1E8C9900DEB707 /* CategoryButton.swift */,
+				7207112D2C1F3BBA00DEB707 /* LikeButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -345,6 +354,7 @@
 				720710EB2C1B269B00DEB707 /* ResourceFont.swift in Sources */,
 				720710D42C1AF60E00DEB707 /* ResourceColor.swift in Sources */,
 				720710F52C1C1FA700DEB707 /* ProfileCollectionViewCell.swift in Sources */,
+				7207112E2C1F3BBA00DEB707 /* LikeButton.swift in Sources */,
 				720710FB2C1C80BA00DEB707 /* TabBarController.swift in Sources */,
 				720710FD2C1C818700DEB707 /* SearchViewController.swift in Sources */,
 				720710CD2C1ADB2600DEB707 /* OnBoardingViewController.swift in Sources */,
@@ -352,8 +362,10 @@
 				720710D12C1AF4EB00DEB707 /* PointButton.swift in Sources */,
 				7207110F2C1DE52F00DEB707 /* SettingTableViewCell.swift in Sources */,
 				720711052C1D6DDB00DEB707 /* EmptyImage.swift in Sources */,
+				7207112C2C1F2EFB00DEB707 /* DetailWebViewController.swift in Sources */,
 				7207111B2C1E94A400DEB707 /* SearchResultCollectionViewCell.swift in Sources */,
 				720711192C1E8C9900DEB707 /* CategoryButton.swift in Sources */,
+				720711302C1F5EE700DEB707 /* ViewType.swift in Sources */,
 				720710E42C1B0FA600DEB707 /* ProfileImage.swift in Sources */,
 				720710F82C1C203500DEB707 /* ReuseIdentifierProtocol.swift in Sources */,
 				720710E22C1B0ACB00DEB707 /* NicknameViewController.swift in Sources */,

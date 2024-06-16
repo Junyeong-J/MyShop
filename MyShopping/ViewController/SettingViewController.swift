@@ -28,6 +28,8 @@ class SettingViewController: UIViewController {
         configureLayout()
         configureUI()
         
+        tapGesture()
+        
         configureTableView()
     }
     
@@ -111,6 +113,7 @@ extension SettingViewController {
     
     @objc func headerViewClicked() {
         let nv = NicknameViewController()
+        nv.viewtype = .old
         navigationController?.pushViewController(nv, animated: true)
     }
     

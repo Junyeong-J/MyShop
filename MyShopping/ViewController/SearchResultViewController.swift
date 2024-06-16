@@ -106,6 +106,9 @@ extension SearchResultViewController {
         stackView.distribution = .fill
         
         countLabel.setUILabel("", textAlignment: .left, color: Color.myShopMainColor, backgroundColor: .clear, font: Font.bold13, cornerRadius: 0, numberLine: 1)
+        
+        accuracyButton.backgroundColor = Color.buttonBackground
+        accuracyButton.setTitleColor(Color.white, for: .normal)
     }
     
     func configureCollectionView() {
@@ -188,7 +191,6 @@ extension SearchResultViewController {
 
 extension SearchResultViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(list.items.count)
         return list.items.count
     }
     
@@ -196,6 +198,13 @@ extension SearchResultViewController: UICollectionViewDataSource, UICollectionVi
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.identifier, for: indexPath) as! SearchResultCollectionViewCell
         cell.configureData(data: list.items[indexPath.item])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailWebViewController()
+        vc.navigationTitle = list.items[indexPath.item].setTitle
+        vc.link = list.items[indexPath.item].link
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

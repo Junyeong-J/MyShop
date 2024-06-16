@@ -13,4 +13,5 @@ enum Color {
     static let myShopMainColor: UIColor = #colorLiteral(red: 0.9564719796, green: 0.610019803, blue: 0.3464771509, alpha: 1)
     static let lightLabel: UIColor = #colorLiteral(red: 0.8407003284, green: 0.8407003284, blue: 0.8407003284, alpha: 1)
     static let buttonBackground: UIColor = #colorLiteral(red: 0.3705568314, green: 0.3705568314, blue: 0.3705568314, alpha: 1)
+    static let blackAlpha50: UIColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.5)
 }

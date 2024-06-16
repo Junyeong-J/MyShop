@@ -16,6 +16,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     let mallNameLabel = UILabel()
     let titleLabel = UILabel()
     let priceLabel = UILabel()
+    let likeButton = LikeButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,14 +32,21 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     func  configureHierarchy() {
         contentView.addSubview(productImageView)
+        productImageView.addSubview(likeButton)
         contentView.addSubview(mallNameLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(priceLabel)
     }
+    
     func configureLayout() {
         productImageView.snp.makeConstraints { make in
             make.horizontalEdges.top.equalTo(contentView).inset(2)
             make.height.equalTo((((width - 50) / 2) * 1.5) * 0.7)
+        }
+        
+        likeButton.snp.makeConstraints { make in
+            make.bottom.trailing.equalTo(productImageView).inset(10)
+            make.size.equalTo(30)
         }
         
         mallNameLabel.snp.makeConstraints { make in
@@ -57,6 +65,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         }
         
     }
+    
     func configureUI() {
         
         mallNameLabel.setUILabel("", textAlignment: .left, color: Color.lightLabel, backgroundColor: .clear, font: Font.regular13, cornerRadius: 0, numberLine: 1)
@@ -71,7 +80,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         let imageUrl = URL(string: data.image)
         productImageView.kf.setImage(with: imageUrl)
         mallNameLabel.text = data.mallName
-        titleLabel.text = data.title
+        titleLabel.text = data.setTitle
         priceLabel.text = data.formatPrice
     }
 }

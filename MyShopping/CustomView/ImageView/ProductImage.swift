@@ -12,7 +12,7 @@ class ProductImage: UIImageView {
     init() {
         super.init(frame: .zero)
         
-        contentMode = .scaleAspectFill
+        contentMode = .scaleAspectFit
         layer.cornerRadius = 10
     }
     

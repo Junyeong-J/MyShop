@@ -11,6 +11,7 @@ import SnapKit
 class NicknameViewController: UIViewController {
     
     var randomImageName = ""
+    var viewtype: ViewType = .new
     
     lazy var profileImageView = ProfileImage(profile: randomImageName, corner: 50)
     let textField = NicknameTextField(style: .nickname)
@@ -32,6 +33,7 @@ class NicknameViewController: UIViewController {
         
         textField.delegate = self
         
+        setView()
     }
     
     
@@ -121,6 +123,16 @@ extension NicknameViewController {
         successButton.addTarget(self, action: #selector(successButtonClicked), for: .touchUpInside)
     }
     
+    func setView() {
+        if viewtype == .new {
+            successButton.isHidden = false
+        } else {
+            let storeButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(storeButtonClicked))
+            navigationItem.rightBarButtonItem = storeButton
+            successButton.isHidden = true
+        }
+    }
+    
     @objc func backButtonClicked() {
         navigationController?.popViewController(animated: true)
     }
@@ -138,6 +150,10 @@ extension NicknameViewController {
         let rootViewController = TabBarController()
         sceneDelegate?.window?.rootViewController = rootViewController
         sceneDelegate?.window?.makeKeyAndVisible()
+    }
+    
+    @objc func storeButtonClicked() {
+        navigationController?.popViewController(animated: true)
     }
     
 }
