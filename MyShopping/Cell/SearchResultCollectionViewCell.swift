@@ -68,7 +68,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     func configureUI() {
         
-        mallNameLabel.setUILabel("", textAlignment: .left, color: Color.lightLabel, backgroundColor: .clear, font: Font.regular13, cornerRadius: 0, numberLine: 1)
+        mallNameLabel.setUILabel("", textAlignment: .left, color: Color.lightGray, backgroundColor: .clear, font: Font.regular13, cornerRadius: 0, numberLine: 1)
         
         titleLabel.setUILabel("", textAlignment: .left, color: .black, backgroundColor: .clear, font: Font.regular14, cornerRadius: 0, numberLine: 2)
         
