@@ -14,7 +14,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         return contentView.bounds.width
     }
     
-    lazy var imageView = ProfileImage(profile: "profile_1", corner: contentViewWidth / 2)
+    lazy var imageView = ProfileImage(profile: "profile_1", corner: contentViewWidth / 2, border: 1)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,7 +51,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     func configureEqualData(imageNames: String) {
         imageView.image = UIImage(named: imageNames)
         imageView.alpha = 1
-        imageView.layer.borderWidth = 2
+        imageView.layer.borderWidth = 3
     }
     
 }

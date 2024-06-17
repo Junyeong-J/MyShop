@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController {
     var viewtype: ViewType = .new
     
     let cameraImage = CameraImage()
-    lazy var profileImageView = ProfileImage(profile: imageName, corner: 50)
+    lazy var profileImageView = ProfileImage(profile: imageName, corner: 50, border: 3)
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     
     func collectionViewLayout() -> UICollectionViewLayout {

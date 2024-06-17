@@ -15,7 +15,7 @@ class NicknameViewController: UIViewController {
     let ud = UserDefaultsManager.shared
     
     let cameraImage = CameraImage()
-    lazy var profileImageView = ProfileImage(profile: randomImageName, corner: 50)
+    lazy var profileImageView = ProfileImage(profile: randomImageName, corner: 50, border: 3)
     let textField = NicknameTextField(style: .nickname)
     let lineView = UIView()
     let stateLabel = UILabel()

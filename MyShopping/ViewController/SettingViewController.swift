@@ -16,7 +16,7 @@ class SettingViewController: UIViewController {
     
     let tableView = UITableView()
     let headerView = UIView()
-    let imageView = ProfileImage(profile: "profile_1", corner: 30)
+    let imageView = ProfileImage(profile: "profile_1", corner: 30, border: 3)
     let buttonImageView = ChevronImage()
     let nickName = UILabel()
     let dateLabel = UILabel()

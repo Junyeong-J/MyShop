@@ -8,13 +8,13 @@
 import UIKit
 
 class ProfileImage: UIImageView {
-    init(profile: String, corner: Double) {
+    init(profile: String, corner: Double, border: Double) {
         super.init(frame: .zero)
         
         image = UIImage(named: profile)
         contentMode = .scaleAspectFit
         layer.cornerRadius = corner
-        layer.borderWidth = 3
+        layer.borderWidth = border
         layer.borderColor = #colorLiteral(red: 0.9564719796, green: 0.610019803, blue: 0.3464771509, alpha: 1)
         clipsToBounds = true
         
