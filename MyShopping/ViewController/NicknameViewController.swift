@@ -40,9 +40,10 @@ class NicknameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let profileName = ud.profileName else { return }
-        randomImageName = profileName
-        profileImageView.image = UIImage(named: randomImageName)
+        print(randomImageName)
+//        guard let profileName = ud.profileName else { return }
+//        randomImageName = profileName
+//        profileImageView.image = UIImage(named: randomImageName)
     }
     
 }
@@ -129,7 +130,11 @@ extension NicknameViewController {
     }
     
     func randomImage() {
-        randomImageName = "profile_\(Int.random(in: 0...11))"
+        if let profileName = ud.profileName, !profileName.isEmpty {
+            randomImageName = profileName
+        } else {
+            randomImageName = "profile_\(Int.random(in: 0...11))"
+        }
     }
     
     func addTargets() {
@@ -164,6 +169,7 @@ extension NicknameViewController {
     
     @objc func profileImageViewClicked() {
         let vc = ProfileViewController()
+        vc.delegate = self
         vc.viewtype = viewtype
         vc.imageName = randomImageName
         navigationController?.pushViewController(vc, animated: true)
@@ -172,6 +178,7 @@ extension NicknameViewController {
     @objc func successButtonClicked() {
         guard let nick = textField.text else {return}
         ud.nickname = nick
+        ud.profileName = randomImageName
         ud.joinDate = joinDate()
         ud.isUser()
         
@@ -185,6 +192,7 @@ extension NicknameViewController {
     
     @objc func storeButtonClicked() {
         guard let nick = textField.text else {return}
+        ud.profileName = randomImageName
         ud.nickname = nick
         navigationController?.popViewController(animated: true)
     }
@@ -228,4 +236,11 @@ extension NicknameViewController: UITextFieldDelegate {
     }
     
     
+}
+
+extension NicknameViewController: ProfileProtocol {
+    func selectImageName(imageName: String) {
+        self.randomImageName = imageName
+        self.profileImageView.image = UIImage(named: imageName)
+    }
 }

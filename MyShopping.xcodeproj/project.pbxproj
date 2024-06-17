@@ -56,6 +56,7 @@
 		7207115F2C20176500DEB707 /* Requirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207115E2C20176500DEB707 /* Requirement.swift */; };
 		720711622C204F7800DEB707 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 720711612C204F7800DEB707 /* IQKeyboardManagerSwift */; };
 		720711642C20776400DEB707 /* BagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711632C20776300DEB707 /* BagImage.swift */; };
+		720711662C20846300DEB707 /* ProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711652C20846300DEB707 /* ProfileProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		7207115C2C20132E00DEB707 /* CameraImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraImage.swift; sourceTree = "<group>"; };
 		7207115E2C20176500DEB707 /* Requirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirement.swift; sourceTree = "<group>"; };
 		720711632C20776300DEB707 /* BagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagImage.swift; sourceTree = "<group>"; };
+		720711652C20846300DEB707 /* ProfileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				720710F72C1C203500DEB707 /* ReuseIdentifierProtocol.swift */,
+				720711652C20846300DEB707 /* ProfileProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				720711032C1D5BD500DEB707 /* SearchTableViewCell.swift in Sources */,
 				720710FF2C1C819400DEB707 /* SettingViewController.swift in Sources */,
 				720711222C1E9DD400DEB707 /* Shop.swift in Sources */,
+				720711662C20846300DEB707 /* ProfileProtocol.swift in Sources */,
 				720710BB2C1AD8EE00DEB707 /* SceneDelegate.swift in Sources */,
 				720711012C1D5A3A00DEB707 /* UserDefaultsManager.swift in Sources */,
 				720711172C1E882A00DEB707 /* SearchResultViewController.swift in Sources */,

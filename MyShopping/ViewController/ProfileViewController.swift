@@ -10,9 +10,9 @@ import SnapKit
 
 class ProfileViewController: UIViewController {
 
+    weak var delegate: ProfileProtocol?
     var imageName = ""
     var viewtype: ViewType = .new
-    let ud = UserDefaultsManager.shared
     
     let cameraImage = CameraImage()
     lazy var profileImageView = ProfileImage(profile: imageName, corner: 50)
@@ -93,7 +93,7 @@ extension ProfileViewController {
     }
     
     @objc func backButtonClicked() {
-        ud.profileName = imageName
+        delegate?.selectImageName(imageName: imageName)
         navigationController?.popViewController(animated: true)
     }
 }
