@@ -9,7 +9,7 @@ import Foundation
 
 enum ViewType: String {
     
-    case new
-    case old
+    case new = "PROFILE SETTING"
+    case old = "EDIT PROFILE"
     
 }

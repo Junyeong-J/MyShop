@@ -12,6 +12,7 @@ class NicknameViewController: UIViewController {
     
     var randomImageName = ""
     var viewtype: ViewType = .new
+    let ud = UserDefaultsManager.shared
     
     let cameraButton = CameraImage()
     lazy var profileImageView = ProfileImage(profile: randomImageName, corner: 50)
@@ -37,7 +38,12 @@ class NicknameViewController: UIViewController {
         setView()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let profileName = ud.profileName else { return }
+        randomImageName = profileName
+        profileImageView.image = UIImage(named: randomImageName)
+    }
     
 }
 
@@ -60,7 +66,7 @@ extension NicknameViewController {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonClicked))
         navigationItem.leftBarButtonItem = backButton
         
-        navigationItem.title = "PROFILE SETTING"
+        navigationItem.title = viewtype.rawValue
     }
     
     func configureHierarchy() {
@@ -124,7 +130,6 @@ extension NicknameViewController {
     
     func randomImage() {
         randomImageName = "profile_\(Int.random(in: 0...11))"
-        print("\(randomImageName)")
     }
     
     func addTargets() {
@@ -137,6 +142,8 @@ extension NicknameViewController {
             successButton.isEnabled = false
             successButton.backgroundColor = Color.lightGray
         } else {
+            guard let nickname = ud.nickname else { return }
+            textField.text = nickname
             let storeButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(storeButtonClicked))
             navigationItem.rightBarButtonItem = storeButton
             successButton.isHidden = true
@@ -154,6 +161,9 @@ extension NicknameViewController {
     }
     
     @objc func successButtonClicked() {
+        guard let nick = textField.text else {return}
+        ud.nickname = nick
+        ud.isUser()
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         
@@ -163,6 +173,8 @@ extension NicknameViewController {
     }
     
     @objc func storeButtonClicked() {
+        guard let nick = textField.text else {return}
+        ud.nickname = nick
         navigationController?.popViewController(animated: true)
     }
     

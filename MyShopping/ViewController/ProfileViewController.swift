@@ -11,8 +11,9 @@ import SnapKit
 class ProfileViewController: UIViewController {
 
     var imageName = ""
-    lazy var profileImageView = ProfileImage(profile: imageName, corner: 50)
+    let ud = UserDefaultsManager.shared
     
+    lazy var profileImageView = ProfileImage(profile: imageName, corner: 50)
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     
     func collectionViewLayout() -> UICollectionViewLayout {
@@ -84,6 +85,7 @@ extension ProfileViewController {
     }
     
     @objc func backButtonClicked() {
+        ud.profileName = imageName
         navigationController?.popViewController(animated: true)
     }
 }

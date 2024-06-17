@@ -12,6 +12,8 @@ import SnapKit
 
 class SettingViewController: UIViewController {
     
+    let ud = UserDefaultsManager.shared
+    
     let tableView = UITableView()
     let headerView = UIView()
     let imageView = ProfileImage(profile: "profile_1", corner: 30)
@@ -33,7 +35,11 @@ class SettingViewController: UIViewController {
         configureTableView()
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let nickname = ud.nickname else { return }
+        nickName.text = nickname
+    }
 }
 
 extension SettingViewController {
@@ -92,7 +98,6 @@ extension SettingViewController {
     func configureUI(){
         view.backgroundColor = .white
         headerView.backgroundColor = .white
-        nickName.text = "dfsfa"
         dateLabel.text = "aaaa"
     }
     
@@ -133,22 +138,22 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        
+        switch indexPath.row {
+        case 0: print("")
+        case 1: print("")
+        case 2: print("")
+        case 3: print("")
+        case 4: let alert = UIAlertController(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화됩니다. 탈퇴 하시겠습니까?", preferredStyle: .alert)
             
-            switch indexPath.row {
-            case 0: print("")
-            case 1: print("")
-            case 2: print("")
-            case 3: print("")
-            case 4: let alert = UIAlertController(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화됩니다. 탈퇴 하시겠습니까?", preferredStyle: .alert)
-                
-                            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-                            alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
-                
-                            present(alert, animated: true)
-            default:
-                print("ERROR")
-            }
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
             
+            present(alert, animated: true)
+        default:
+            print("ERROR")
+        }
+        
         
     }
 }

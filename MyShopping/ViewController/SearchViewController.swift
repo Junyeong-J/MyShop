@@ -30,18 +30,36 @@ class SearchViewController: UIViewController {
         configureTableView()
         screenLayout()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let nickname = ud.nickname else { return }
+        navigationItem.title = "\(nickname)님의 MEANING OUT"
+    }
 
 }
 
 extension SearchViewController {
     
     func makeNavigationUI() {
+        guard let nickname = ud.nickname else { return }
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
+        
+        navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        navigationController?.navigationBar.compactAppearance = navigationBarAppearance
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.tintColor = .black
         
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.placeholder = TextFieldPlaceholder.search.rawValue
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
-        navigationItem.title = "000님의 MEANING OUT"
+        navigationItem.title = "\(nickname)님의 MEANING OUT"
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = true
         navigationItem.hidesSearchBarWhenScrolling = false
