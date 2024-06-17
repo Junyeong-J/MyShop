@@ -38,7 +38,6 @@
 		7207110D2C1D7CAD00DEB707 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207110C2C1D7CAD00DEB707 /* DeleteButton.swift */; };
 		7207110F2C1DE52F00DEB707 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207110E2C1DE52F00DEB707 /* SettingTableViewCell.swift */; };
 		720711112C1DED0F00DEB707 /* ChevronImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711102C1DED0F00DEB707 /* ChevronImage.swift */; };
-		720711132C1DF51D00DEB707 /* ProfileViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711122C1DF51D00DEB707 /* ProfileViewTableViewCell.swift */; };
 		720711152C1DFF3B00DEB707 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711142C1DFF3B00DEB707 /* Setting.swift */; };
 		720711172C1E882A00DEB707 /* SearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711162C1E882A00DEB707 /* SearchResultViewController.swift */; };
 		720711192C1E8C9900DEB707 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711182C1E8C9900DEB707 /* CategoryButton.swift */; };
@@ -93,7 +92,6 @@
 		7207110C2C1D7CAD00DEB707 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		7207110E2C1DE52F00DEB707 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
 		720711102C1DED0F00DEB707 /* ChevronImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChevronImage.swift; sourceTree = "<group>"; };
-		720711122C1DF51D00DEB707 /* ProfileViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewTableViewCell.swift; sourceTree = "<group>"; };
 		720711142C1DFF3B00DEB707 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		720711162C1E882A00DEB707 /* SearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultViewController.swift; sourceTree = "<group>"; };
 		720711182C1E8C9900DEB707 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 			children = (
 				720710F42C1C1FA700DEB707 /* ProfileCollectionViewCell.swift */,
 				720711022C1D5BD500DEB707 /* SearchTableViewCell.swift */,
-				720711122C1DF51D00DEB707 /* ProfileViewTableViewCell.swift */,
 				7207110E2C1DE52F00DEB707 /* SettingTableViewCell.swift */,
 				7207111A2C1E94A400DEB707 /* SearchResultCollectionViewCell.swift */,
 			);
@@ -370,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				720711132C1DF51D00DEB707 /* ProfileViewTableViewCell.swift in Sources */,
 				720710EB2C1B269B00DEB707 /* ResourceFont.swift in Sources */,
 				720710D42C1AF60E00DEB707 /* ResourceColor.swift in Sources */,
 				720710F52C1C1FA700DEB707 /* ProfileCollectionViewCell.swift in Sources */,
