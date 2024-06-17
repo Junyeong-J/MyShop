@@ -13,7 +13,7 @@ class PointButton: UIButton {
         super.init(frame: .zero)
         
         setTitle(title, for: .normal)
-        setTitleColor(.white, for: .normal)
+        setTitleColor(Color.white, for: .normal)
         layer.cornerRadius = 25
         backgroundColor = Color.myShopMainColor
         
