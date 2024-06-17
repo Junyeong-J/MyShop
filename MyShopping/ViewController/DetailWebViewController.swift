@@ -38,7 +38,7 @@ extension DetailWebViewController {
         let likeImage = data.isliked == true ? "bag.fill" : "bag"
         let likeButton = UIBarButtonItem(image: UIImage(systemName: likeImage), style: .plain, target: self, action: #selector(likeButtonClicked))
         navigationItem.rightBarButtonItem = likeButton
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = Color.black
         navigationItem.title = data.setTitle
     }
     

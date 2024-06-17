@@ -74,9 +74,9 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         
         mallNameLabel.setUILabel("", textAlignment: .left, color: Color.lightGray, backgroundColor: .clear, font: Font.regular13, cornerRadius: 0, numberLine: 1)
         
-        titleLabel.setUILabel("", textAlignment: .left, color: .black, backgroundColor: .clear, font: Font.regular14, cornerRadius: 0, numberLine: 2)
+        titleLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.regular14, cornerRadius: 0, numberLine: 2)
         
-        priceLabel.setUILabel("", textAlignment: .left, color: .black, backgroundColor: .clear, font: Font.bold17, cornerRadius: 0, numberLine: 1)
+        priceLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.bold17, cornerRadius: 0, numberLine: 1)
     }
     
     func configureData(data: ShopItems, indexPath: IndexPath) {

@@ -56,7 +56,7 @@ class SearchTableViewCell: UITableViewCell {
     }
     
     func configureUI() {
-        searchWordLabel.setUILabel("", textAlignment: .left, color: .black, backgroundColor: .clear, font: Font.regular15, cornerRadius: 0, numberLine: 1)
+        searchWordLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.regular15, cornerRadius: 0, numberLine: 1)
     }
     
     func configureData(word: String) {

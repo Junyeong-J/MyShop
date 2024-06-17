@@ -64,7 +64,7 @@ extension SearchResultViewController {
     func makeNavigationUI() {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonClicked))
         navigationItem.leftBarButtonItem = backButton
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = Color.black
         navigationItem.title = navigationTitle
     }
     
@@ -105,7 +105,7 @@ extension SearchResultViewController {
     }
     
     func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = Color.white
         stackView.spacing = 10
         stackView.axis = .horizontal
         stackView.distribution = .fill
