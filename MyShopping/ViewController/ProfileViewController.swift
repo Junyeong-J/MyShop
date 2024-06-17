@@ -11,6 +11,7 @@ import SnapKit
 class ProfileViewController: UIViewController {
 
     var imageName = ""
+    var viewtype: ViewType = .new
     let ud = UserDefaultsManager.shared
     
     let cameraImage = CameraImage()
@@ -53,7 +54,7 @@ extension ProfileViewController {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonClicked))
         navigationItem.leftBarButtonItem = backButton
         
-        navigationItem.title = "PROFILE SETTING"
+        navigationItem.title = viewtype.rawValue
     }
     
     func configureHierarchy() {

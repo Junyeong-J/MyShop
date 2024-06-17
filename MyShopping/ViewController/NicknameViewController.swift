@@ -163,9 +163,10 @@ extension NicknameViewController {
     }
     
     @objc func profileImageViewClicked() {
-        let nv = ProfileViewController()
-        nv.imageName = randomImageName
-        navigationController?.pushViewController(nv, animated: true)
+        let vc = ProfileViewController()
+        vc.viewtype = viewtype
+        vc.imageName = randomImageName
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func successButtonClicked() {
