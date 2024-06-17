@@ -134,6 +134,8 @@ extension NicknameViewController {
     func setView() {
         if viewtype == .new {
             successButton.isHidden = false
+            successButton.isEnabled = false
+            successButton.backgroundColor = Color.lightGray
         } else {
             let storeButton = UIBarButtonItem(title: "저장", style: .plain, target: self, action: #selector(storeButtonClicked))
             navigationItem.rightBarButtonItem = storeButton
@@ -172,19 +174,33 @@ extension NicknameViewController: UITextFieldDelegate {
         if textField.text!.count >= 2 && textField.text!.count < 10 {
             if textField.text!.range(of: "\\d", options: .regularExpression) != nil {
                 stateLabel.text = Requirement.number.rawValue
+                successButton.isEnabled = false
+                successButton.backgroundColor = Color.lightGray
             } else if textField.text!.range(of:"@") != nil {
                 stateLabel.text = Requirement.at.rawValue
+                successButton.isEnabled = false
+                successButton.backgroundColor = Color.lightGray
             } else if textField.text!.range(of:"#") != nil {
                 stateLabel.text = Requirement.hash.rawValue
+                successButton.isEnabled = false
+                successButton.backgroundColor = Color.lightGray
             } else if textField.text!.range(of:"$") != nil {
                 stateLabel.text = Requirement.dollar.rawValue
+                successButton.isEnabled = false
+                successButton.backgroundColor = Color.lightGray
             } else if textField.text!.range(of:"%") != nil {
                 stateLabel.text = Requirement.percent.rawValue
+                successButton.isEnabled = false
+                successButton.backgroundColor = Color.lightGray
             } else {
                 stateLabel.text = Requirement.correct.rawValue
+                successButton.isEnabled = true
+                successButton.backgroundColor = Color.myShopMainColor
             }
         } else {
             stateLabel.text = Requirement.count.rawValue
+            successButton.isEnabled = false
+            successButton.backgroundColor = Color.lightGray
         }
     }
     

@@ -12,7 +12,7 @@ class ProfileImage: UIImageView {
         super.init(frame: .zero)
         
         image = UIImage(named: profile)
-        contentMode = .scaleAspectFill
+        contentMode = .scaleAspectFit
         layer.cornerRadius = corner
         layer.borderWidth = 3
         layer.borderColor = #colorLiteral(red: 0.9564719796, green: 0.610019803, blue: 0.3464771509, alpha: 1)
