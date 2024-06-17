@@ -171,7 +171,10 @@ extension NicknameViewController {
     }
     
     @objc func successButtonClicked() {
-        guard let nick = textField.text else {return}
+        guard let nick = textField.text else {
+            self.view.makeToast("닉네임이 잘못 입력되었습니다.")
+            return
+        }
         ud.nickname = nick
         ud.profileName = randomImageName
         ud.joinDate = joinDate()
@@ -186,7 +189,10 @@ extension NicknameViewController {
     }
     
     @objc func storeButtonClicked() {
-        guard let nick = textField.text else {return}
+        guard let nick = textField.text else {
+            self.view.makeToast("닉네임이 잘못 입력되었습니다.")
+            return
+        }
         ud.profileName = randomImageName
         ud.nickname = nick
         navigationController?.popViewController(animated: true)
@@ -199,7 +205,7 @@ extension NicknameViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
         guard let text = textField.text else {
-            self.view.makeToast("잘못 입력되었습니다.")
+            self.view.makeToast("텍스트 필드에 잘못 입력되었습니다.")
             return
         }
         

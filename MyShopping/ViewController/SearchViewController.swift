@@ -7,13 +7,14 @@
 
 import UIKit
 import SnapKit
+import Toast
 
 class SearchViewController: UIViewController {
 
     let deviceWidth = UIScreen.main.bounds.size.width
     
     let emptyImageView = EmptyImage(title: "empty")
-    let emptyLabel = SetLabel(title: "최근 검색어가 없어요", textAlignment: .center, color: .black, backgroundColor: .clear, font: Font.bold17, cornerRadius: 0, numberLine: 1)
+    let emptyLabel = SetLabel(title: "최근 검색어가 없어요", textAlignment: .center, color: Color.black, backgroundColor: .clear, font: Font.bold17, cornerRadius: 0, numberLine: 1)
     let tableView = UITableView()
     
     let ud = UserDefaultsManager.shared
@@ -22,19 +23,16 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         
         makeNavigationUI()
-        
         configureHierarchy()
         configureLayout()
         configureUI()
-        
         configureTableView()
         screenLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let nickname = ud.nickname else { return }
-        navigationItem.title = "\(nickname)님의 MEANING OUT"
+        titleSet()
     }
 
 }
@@ -42,13 +40,11 @@ class SearchViewController: UIViewController {
 extension SearchViewController {
     
     func makeNavigationUI() {
-        guard let nickname = ud.nickname else { return }
+        
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
-        
         UINavigationBar.appearance().standardAppearance = navigationBarAppearance
         UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
-        
         navigationController?.navigationBar.standardAppearance = navigationBarAppearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         navigationController?.navigationBar.compactAppearance = navigationBarAppearance
@@ -59,10 +55,10 @@ extension SearchViewController {
         searchController.searchBar.placeholder = TextFieldPlaceholder.search.rawValue
         navigationItem.searchController = searchController
         searchController.searchBar.delegate = self
-        navigationItem.title = "\(nickname)님의 MEANING OUT"
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.obscuresBackgroundDuringPresentation = true
         navigationItem.hidesSearchBarWhenScrolling = false
+        titleSet()
     }
     
     func configureHierarchy() {
@@ -108,11 +104,22 @@ extension SearchViewController {
         }
     }
     
+    func titleSet() {
+        guard let nickname = ud.nickname else {
+            self.view.makeToast("닉네임이 잘못 입력되었습니다.")
+            return
+        }
+        navigationItem.title = "\(nickname)님의 MEANING OUT"
+    }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = searchBar.text, !searchText.isEmpty else { return }
+        guard let searchText = searchBar.text, !searchText.isEmpty else { 
+            self.view.makeToast("검색어가 잘못 입력되었습니다.")
+            return
+        }
         ud.saveSearchWord(word: searchText)
         tableView.reloadData()
         screenLayout()
