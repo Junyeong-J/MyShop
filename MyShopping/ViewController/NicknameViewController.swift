@@ -16,7 +16,7 @@ class NicknameViewController: UIViewController {
     lazy var profileImageView = ProfileImage(profile: randomImageName, corner: 50)
     let textField = NicknameTextField(style: .nickname)
     let lineView = UIView()
-    let stateLabel = SetLabel(title: "", textAlignment: .left, color: #colorLiteral(red: 0.9564719796, green: 0.610019803, blue: 0.3464771509, alpha: 1), backgroundColor: .clear, font: Font.regular13, cornerRadius: 0, numberLine: 1)
+    let stateLabel = UILabel()
     let successButton = PointButton(title: "완료")
     
     override func viewDidLoad() {
@@ -102,10 +102,11 @@ extension NicknameViewController {
     }
     
     func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = Color.white
         
-        lineView.backgroundColor = .black
+        lineView.backgroundColor = Color.lightGray
         
+        stateLabel.setUILabel("", textAlignment: .left, color: Color.myShopMainColor, backgroundColor: .clear, font: Font.regular13, cornerRadius: 0, numberLine: 1)
     }
     
     func tapGesture(){
