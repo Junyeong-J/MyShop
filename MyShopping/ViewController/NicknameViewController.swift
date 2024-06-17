@@ -14,7 +14,7 @@ class NicknameViewController: UIViewController {
     var viewtype: ViewType = .new
     let ud = UserDefaultsManager.shared
     
-    let cameraButton = CameraImage()
+    let cameraImage = CameraImage()
     lazy var profileImageView = ProfileImage(profile: randomImageName, corner: 50)
     let textField = NicknameTextField(style: .nickname)
     let lineView = UIView()
@@ -71,7 +71,7 @@ extension NicknameViewController {
     
     func configureHierarchy() {
         view.addSubview(profileImageView)
-        view.addSubview(cameraButton)
+        view.addSubview(cameraImage)
         view.addSubview(textField)
         view.addSubview(lineView)
         view.addSubview(stateLabel)
@@ -85,7 +85,7 @@ extension NicknameViewController {
             make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
         }
         
-        cameraButton.snp.makeConstraints { make in
+        cameraImage.snp.makeConstraints { make in
             make.trailing.bottom.equalTo(profileImageView)
             make.size.equalTo(30)
         }

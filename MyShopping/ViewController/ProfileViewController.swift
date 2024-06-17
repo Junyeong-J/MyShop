@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     var imageName = ""
     let ud = UserDefaultsManager.shared
     
+    let cameraImage = CameraImage()
     lazy var profileImageView = ProfileImage(profile: imageName, corner: 50)
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     
@@ -57,6 +58,7 @@ extension ProfileViewController {
     
     func configureHierarchy() {
         view.addSubview(profileImageView)
+        view.addSubview(cameraImage)
         view.addSubview(collectionView)
     }
     
@@ -65,6 +67,11 @@ extension ProfileViewController {
             make.size.equalTo(100)
             make.centerX.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+        }
+        
+        cameraImage.snp.makeConstraints { make in
+            make.trailing.bottom.equalTo(profileImageView)
+            make.size.equalTo(30)
         }
         
         collectionView.snp.makeConstraints { make in

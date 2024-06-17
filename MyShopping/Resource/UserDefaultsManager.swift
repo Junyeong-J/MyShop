@@ -70,4 +70,13 @@ class UserDefaultsManager {
         UserDefaults.standard.removeObject(forKey: searchHistoryForKey)
     }
     
+    
+    //MARK: - 모두 삭제(탈퇴)
+    func clearAllData() {
+        UserDefaults.standard.removeObject(forKey: profileForKey)
+        UserDefaults.standard.removeObject(forKey: nicknameForKey)
+        UserDefaults.standard.removeObject(forKey: searchHistoryForKey)
+        UserDefaults.standard.removeObject(forKey: user)
+    }
+    
 }

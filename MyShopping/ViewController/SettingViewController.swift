@@ -37,8 +37,9 @@ class SettingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let nickname = ud.nickname else { return }
+        guard let nickname = ud.nickname, let imagename = ud.profileName else { return }
         nickName.text = nickname
+        imageView.image = UIImage(named: imagename)
     }
 }
 
@@ -146,7 +147,16 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         case 3: print("")
         case 4: let alert = UIAlertController(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화됩니다. 탈퇴 하시겠습니까?", preferredStyle: .alert)
             
-            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+                self.ud.clearAllData()
+                
+                let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+                let sceneDelegate = windowScene?.delegate as? SceneDelegate
+                
+                let rootViewController = UINavigationController(rootViewController: OnBoardingViewController())
+                sceneDelegate?.window?.rootViewController = rootViewController
+                sceneDelegate?.window?.makeKeyAndVisible()
+            }))
             alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
             
             present(alert, animated: true)
