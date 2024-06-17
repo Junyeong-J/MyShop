@@ -39,4 +39,8 @@ struct ShopItems: Decodable {
     var setTitle: String {
         return title.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
     }
+    
+    var isliked: Bool {
+        return UserDefaultsManager.shared.likeId.contains(productId)
+    }
 }

@@ -14,6 +14,7 @@ class SearchResultViewController: UIViewController {
     var list = Shop(total: 0, start: 0, display: 0, items: [])
     var start = 1
     var sort: Sort = .accuracy
+    let ud = UserDefaultsManager.shared
     
     var navigationTitle: String = ""
     let categoryView = UIView()
@@ -51,6 +52,10 @@ class SearchResultViewController: UIViewController {
         addTargets()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
     
 }
 
@@ -196,16 +201,17 @@ extension SearchResultViewController: UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.identifier, for: indexPath) as! SearchResultCollectionViewCell
-        cell.configureData(data: list.items[indexPath.item])
+        cell.id = list.items[indexPath.item].productId
+        cell.configureData(data: list.items[indexPath.item], indexPath: indexPath)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailWebViewController()
-        vc.navigationTitle = list.items[indexPath.item].setTitle
-        vc.link = list.items[indexPath.item].link
+        vc.data = list.items[indexPath.item]
         navigationController?.pushViewController(vc, animated: true)
     }
+    
 }
 
 extension SearchResultViewController: UICollectionViewDataSourcePrefetching {

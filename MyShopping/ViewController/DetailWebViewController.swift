@@ -12,12 +12,13 @@ import SnapKit
 class DetailWebViewController: UIViewController {
     
     let webView = WKWebView()
-    var navigationTitle = ""
-    var link = ""
+    
+    let ud = UserDefaultsManager.shared
+    var data = ShopItems(title: "", link: "", image: "", lprice: "", mallName: "", productId: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         makeNavigationUI()
         
         configureHierarchy()
@@ -26,7 +27,7 @@ class DetailWebViewController: UIViewController {
         
         configureWebView()
     }
-
+    
 }
 
 extension DetailWebViewController {
@@ -34,10 +35,11 @@ extension DetailWebViewController {
     func makeNavigationUI() {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonClicked))
         navigationItem.leftBarButtonItem = backButton
-        let likeButton = UIBarButtonItem(image: UIImage(systemName: "bag.fill"), style: .plain, target: self, action: #selector(likeButtonClicked))
+        let likeImage = data.isliked == true ? "bag.fill" : "bag"
+        let likeButton = UIBarButtonItem(image: UIImage(systemName: likeImage), style: .plain, target: self, action: #selector(likeButtonClicked))
         navigationItem.rightBarButtonItem = likeButton
         navigationController?.navigationBar.tintColor = .black
-        navigationItem.title = navigationTitle
+        navigationItem.title = data.setTitle
     }
     
     func configureHierarchy() {
@@ -51,11 +53,11 @@ extension DetailWebViewController {
     }
     
     func configureUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = Color.white
     }
     
     func configureWebView() {
-        let url = URL(string: link)!
+        let url = URL(string: data.link)!
         let request = URLRequest(url: url)
         webView.load(request)
     }
@@ -65,6 +67,18 @@ extension DetailWebViewController {
     }
     
     @objc func likeButtonClicked() {
-        
+        if ud.likeId.contains(data.productId) {
+            ud.removeLikeId(id: data.productId)
+        } else {
+            ud.saveLikeId(id: data.productId)
+        }
+        let isLiked = ud.likeId.contains(data.productId)
+        likeButtonUI(isLiked: isLiked)
+    }
+    
+    func likeButtonUI(isLiked: Bool) {
+        let likeImage = isLiked ? "bag.fill" : "bag"
+        let likeButton = UIBarButtonItem(image: UIImage(systemName: likeImage), style: .plain, target: self, action: #selector(likeButtonClicked))
+        navigationItem.rightBarButtonItem = likeButton
     }
 }

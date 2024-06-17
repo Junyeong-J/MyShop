@@ -12,11 +12,14 @@ import SnapKit
 class SearchResultCollectionViewCell: UICollectionViewCell {
     
     let width = UIScreen.main.bounds.width
+    let ud = UserDefaultsManager.shared
+    var id: String?
+    
     let productImageView = ProductImage()
     let mallNameLabel = UILabel()
     let titleLabel = UILabel()
     let priceLabel = UILabel()
-    let likeButton = LikeButton()
+    var likeButton = LikeButton(backColor: Color.blackAlpha50, tint: Color.white)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,6 +27,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         configureHierarchy()
         configureLayout()
         configureUI()
+        likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -75,12 +79,38 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         priceLabel.setUILabel("", textAlignment: .left, color: .black, backgroundColor: .clear, font: Font.bold17, cornerRadius: 0, numberLine: 1)
     }
     
-    func configureData(data: ShopItems) {
+    func configureData(data: ShopItems, indexPath: IndexPath) {
         
         let imageUrl = URL(string: data.image)
         productImageView.kf.setImage(with: imageUrl)
         mallNameLabel.text = data.mallName
         titleLabel.text = data.setTitle
         priceLabel.text = data.formatPrice
+        likeButton.tag = indexPath.row
+
+        likeButtonUI(isLiked: data.isliked)
+    }
+    
+    @objc func likeButtonClicked() {
+        guard let productId = id else { return }
+
+        if ud.likeId.contains(productId) {
+            ud.removeLikeId(id: productId)
+        } else {
+            ud.saveLikeId(id: productId)
+        }
+        
+        let isLiked = ud.likeId.contains(productId)
+        likeButtonUI(isLiked: isLiked)
+    }
+    
+    func likeButtonUI(isLiked: Bool) {
+        if isLiked {
+            likeButton.backgroundColor = Color.white
+            likeButton.tintColor = Color.black
+        } else {
+            likeButton.backgroundColor = Color.blackAlpha50
+            likeButton.tintColor = Color.white
+        }
     }
 }

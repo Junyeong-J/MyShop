@@ -9,14 +9,14 @@ import UIKit
 
 class LikeButton: UIButton {
     
-    init() {
+    init(backColor: UIColor, tint: UIColor) {
         super.init(frame: .zero)
         
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .light)
         let image = UIImage(systemName: "bag.fill", withConfiguration: imageConfig)
-        backgroundColor = Color.blackAlpha50
+        backgroundColor = backColor
         setImage(image, for: .normal)
-        tintColor = .white
+        tintColor = tint
         layer.cornerRadius = 5
     }
     
