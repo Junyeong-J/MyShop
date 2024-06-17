@@ -41,9 +41,6 @@ class ProfileViewController: UIViewController {
         
         configureCollectionView()
     }
-    
-    
-    
 
 }
 
@@ -105,10 +102,11 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProfileCollectionViewCell.identifier, for: indexPath) as! ProfileCollectionViewCell
-        if imageName == "profile_\(indexPath.item)" {
-            cell.configureEqualData(imageNames: "profile_\(indexPath.item)")
+        let profileName = "profile_\(indexPath.item)"
+        if imageName == profileName {
+            cell.configureEqualData(imageNames: profileName)
         } else {
-            cell.configureData(imageNames: "profile_\(indexPath.item)")
+            cell.configureData(imageNames: profileName)
         }
         return cell
     }

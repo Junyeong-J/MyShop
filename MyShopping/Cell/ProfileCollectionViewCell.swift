@@ -20,7 +20,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         configureHierarchy()
         configureLayout()
-        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -36,10 +35,6 @@ class ProfileCollectionViewCell: UICollectionViewCell {
             make.center.equalTo(contentView)
             make.size.equalTo(contentView.snp.width)
         }
-    }
-    
-    func configureUI() {
-        
     }
     
     func configureData(imageNames: String) {
