@@ -9,10 +9,10 @@ import UIKit
 
 class MainPosterImageView: UIImageView {
     
-    init(imageTitle: String) {
+    init() {
         super.init(frame: .zero)
         
-        image = UIImage(named: imageTitle)
+        image = UIImage(named: "launch")
         contentMode = .scaleAspectFill
         
     }

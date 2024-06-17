@@ -13,13 +13,12 @@ class OnBoardingViewController: UIViewController {
     let deviceWidth = UIScreen.main.bounds.size.width
     
     let startButton = PointButton(title: "시작하기")
-    let mainPosterImageView = MainPosterImageView(imageTitle: "launch")
+    let mainPosterImageView = MainPosterImageView()
     let appTitleLabel = AppTitleLabel(title: "MeaningOut")
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         configureHierarchy()
         configureLayout()
         configureUI()
