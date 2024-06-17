@@ -39,7 +39,6 @@ class SearchResultViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(sort.sortTargets())
         makeNavigationUI()
         
         configureHierarchy()
