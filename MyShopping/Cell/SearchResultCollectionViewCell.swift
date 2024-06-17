@@ -32,7 +32,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     func  configureHierarchy() {
         contentView.addSubview(productImageView)
-        productImageView.addSubview(likeButton)
+        contentView.addSubview(likeButton)
         contentView.addSubview(mallNameLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(priceLabel)

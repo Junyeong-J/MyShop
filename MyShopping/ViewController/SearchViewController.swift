@@ -168,6 +168,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return 30
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let searchWord = ud.recentWord
+        let word = searchWord[indexPath.row]
+        let vc = SearchResultViewController()
+        vc.navigationTitle = word
+        navigationController?.pushViewController(vc, animated: true)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+    }
+    
     @objc func allClearButtonClicked() {
         ud.clearSearchHistory()
         self.tableView.reloadData()
