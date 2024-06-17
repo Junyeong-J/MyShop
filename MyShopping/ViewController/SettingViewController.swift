@@ -7,8 +7,7 @@
 
 import UIKit
 import SnapKit
-
-
+import Toast
 
 class SettingViewController: UIViewController {
     
@@ -37,7 +36,7 @@ class SettingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let nickname = ud.nickname, let imagename = ud.profileName else { print("aa")
+        guard let nickname = ud.nickname, let imagename = ud.profileName else {
             return }
         nickName.text = nickname
         imageView.image = UIImage(named: imagename)
@@ -48,7 +47,7 @@ class SettingViewController: UIViewController {
 extension SettingViewController {
     
     func makeNavigationUI() {
-        navigationItem.title = "SETTING"
+        navigationItem.title = ViewType.set.rawValue
     }
     
     func configureHierarchy() {
@@ -128,7 +127,7 @@ extension SettingViewController {
         guard let nickname = ud.nickname, let imagename = ud.profileName, let date = ud.joinDate else { return }
         nickName.text = nickname
         imageView.image = UIImage(named: imagename)
-        dateLabel.text = "\(date) 가입"
+        dateLabel.text = date
     }
     
     @objc func headerViewClicked() {
@@ -155,10 +154,10 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.reloadRows(at: [indexPath], with: .automatic)
         switch indexPath.row {
-        case 0: print("")
-        case 1: print("")
-        case 2: print("")
-        case 3: print("")
+        case 0: toastMessage(message: "준비중 입니다.")
+        case 1: toastMessage(message: "준비중 입니다.")
+        case 2: toastMessage(message: "준비중 입니다.")
+        case 3: toastMessage(message: "준비중 입니다.")
         case 4: let alert = UIAlertController(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화됩니다. 탈퇴 하시겠습니까?", preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
@@ -175,9 +174,11 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
             
             present(alert, animated: true)
         default:
-            print("ERROR")
+            toastMessage(message: "앱을 끄고 다시 실행해 주세요.")
         }
-        
-        
+    }
+    
+    func toastMessage(message: String) {
+        self.view.makeToast(message)
     }
 }

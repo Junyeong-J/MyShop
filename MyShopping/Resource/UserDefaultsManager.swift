@@ -50,7 +50,7 @@ class UserDefaultsManager {
             guard let nowDate = UserDefaults.standard.string(forKey: date) else {
                 return nil
             }
-            return nowDate
+            return "\(nowDate) 가입"
         }
         set {
             UserDefaults.standard.set(newValue, forKey: date)
