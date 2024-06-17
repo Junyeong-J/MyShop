@@ -18,7 +18,7 @@ class CameraImage: UIImageView {
         contentMode = .center
         layer.cornerRadius = 15
         backgroundColor = Color.myShopMainColor
-        tintColor = .white
+        tintColor = Color.white
     }
     
     required init?(coder: NSCoder) {

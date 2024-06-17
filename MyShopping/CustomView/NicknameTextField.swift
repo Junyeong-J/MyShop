@@ -12,7 +12,6 @@ class NicknameTextField: UITextField {
     init(style: TextFieldPlaceholder) {
         super.init(frame: .zero)
         
-        
         placeholder = style.rawValue
         
     }

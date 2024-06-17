@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Toast
 
 class NicknameViewController: UIViewController {
     
@@ -38,14 +39,6 @@ class NicknameViewController: UIViewController {
         setView()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print(randomImageName)
-//        guard let profileName = ud.profileName else { return }
-//        randomImageName = profileName
-//        profileImageView.image = UIImage(named: randomImageName)
-    }
-    
 }
 
 extension NicknameViewController {
@@ -62,7 +55,7 @@ extension NicknameViewController {
         navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
         navigationController?.navigationBar.compactAppearance = navigationBarAppearance
         navigationController?.navigationBar.isTranslucent = true
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = Color.black
         
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonClicked))
         navigationItem.leftBarButtonItem = backButton
@@ -119,6 +112,8 @@ extension NicknameViewController {
         view.backgroundColor = Color.white
         
         lineView.backgroundColor = Color.lightGray
+        
+        textField.tintColor = Color.black
         
         stateLabel.setUILabel("", textAlignment: .left, color: Color.myShopMainColor, backgroundColor: .clear, font: Font.regular13, cornerRadius: 0, numberLine: 1)
     }
@@ -202,39 +197,47 @@ extension NicknameViewController {
 extension NicknameViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        if textField.text!.count >= 2 && textField.text!.count < 10 {
-            if textField.text!.range(of: "\\d", options: .regularExpression) != nil {
+        
+        guard let text = textField.text else {
+            self.view.makeToast("잘못 입력되었습니다.")
+            return
+        }
+        
+        if textLength(text: text) {
+            if text.range(of: "\\d", options: .regularExpression) != nil {
                 stateLabel.text = Requirement.number.rawValue
-                successButton.isEnabled = false
-                successButton.backgroundColor = Color.lightGray
-            } else if textField.text!.range(of:"@") != nil {
+                changeButton(isEnabled: false)
+            } else if text.range(of:"@") != nil {
                 stateLabel.text = Requirement.at.rawValue
-                successButton.isEnabled = false
-                successButton.backgroundColor = Color.lightGray
-            } else if textField.text!.range(of:"#") != nil {
+                changeButton(isEnabled: false)
+            } else if text.range(of:"#") != nil {
                 stateLabel.text = Requirement.hash.rawValue
-                successButton.isEnabled = false
-                successButton.backgroundColor = Color.lightGray
-            } else if textField.text!.range(of:"$") != nil {
+                changeButton(isEnabled: false)
+            } else if text.range(of:"$") != nil {
                 stateLabel.text = Requirement.dollar.rawValue
-                successButton.isEnabled = false
-                successButton.backgroundColor = Color.lightGray
-            } else if textField.text!.range(of:"%") != nil {
+                changeButton(isEnabled: false)
+            } else if text.range(of:"%") != nil {
                 stateLabel.text = Requirement.percent.rawValue
-                successButton.isEnabled = false
-                successButton.backgroundColor = Color.lightGray
+                changeButton(isEnabled: false)
             } else {
                 stateLabel.text = Requirement.correct.rawValue
-                successButton.isEnabled = true
-                successButton.backgroundColor = Color.myShopMainColor
+                changeButton(isEnabled: true)
             }
         } else {
             stateLabel.text = Requirement.count.rawValue
-            successButton.isEnabled = false
-            successButton.backgroundColor = Color.lightGray
+            changeButton(isEnabled: false)
         }
+        
     }
     
+    func textLength(text: String) -> Bool {
+        return text.count >= 2 && text.count < 10
+    }
+    
+    func changeButton(isEnabled: Bool) {
+        successButton.isEnabled = isEnabled
+        successButton.backgroundColor = isEnabled ? Color.myShopMainColor : Color.lightGray
+    }
     
 }
 
