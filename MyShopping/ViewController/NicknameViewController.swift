@@ -13,6 +13,7 @@ class NicknameViewController: UIViewController {
     var randomImageName = ""
     var viewtype: ViewType = .new
     
+    let cameraButton = CameraImage()
     lazy var profileImageView = ProfileImage(profile: randomImageName, corner: 50)
     let textField = NicknameTextField(style: .nickname)
     let lineView = UIView()
@@ -64,6 +65,7 @@ extension NicknameViewController {
     
     func configureHierarchy() {
         view.addSubview(profileImageView)
+        view.addSubview(cameraButton)
         view.addSubview(textField)
         view.addSubview(lineView)
         view.addSubview(stateLabel)
@@ -75,6 +77,11 @@ extension NicknameViewController {
             make.size.equalTo(100)
             make.centerX.equalTo(view.safeAreaLayoutGuide)
             make.top.equalTo(view.safeAreaLayoutGuide).inset(30)
+        }
+        
+        cameraButton.snp.makeConstraints { make in
+            make.trailing.bottom.equalTo(profileImageView)
+            make.size.equalTo(30)
         }
         
         textField.snp.makeConstraints { make in
@@ -164,21 +171,20 @@ extension NicknameViewController: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField.text!.count >= 2 && textField.text!.count < 10 {
             if textField.text!.range(of: "\\d", options: .regularExpression) != nil {
-                stateLabel.text = "닉네임에 숫자는 포함할 수 없어요"
+                stateLabel.text = Requirement.number.rawValue
             } else if textField.text!.range(of:"@") != nil {
-                stateLabel.text = "닉네임에 @는 포함할 수 없어요"
+                stateLabel.text = Requirement.at.rawValue
             } else if textField.text!.range(of:"#") != nil {
-                stateLabel.text = "닉네임에 #는 포함할 수 없어요"
+                stateLabel.text = Requirement.hash.rawValue
             } else if textField.text!.range(of:"$") != nil {
-                stateLabel.text = "닉네임에 $는 포함할 수 없어요"
+                stateLabel.text = Requirement.dollar.rawValue
             } else if textField.text!.range(of:"%") != nil {
-                stateLabel.text = "닉네임에 %는 포함할 수 없어요"
+                stateLabel.text = Requirement.percent.rawValue
             } else {
-                stateLabel.text = "사용할 수 있는 닉네임이에요"
+                stateLabel.text = Requirement.correct.rawValue
             }
-            
         } else {
-            stateLabel.text = "2글자 이상 10글자 미만으로 설정해주세요"
+            stateLabel.text = Requirement.count.rawValue
         }
     }
     
