@@ -10,6 +10,12 @@ import SnapKit
 
 class SettingTableViewCell: UITableViewCell {
     
+    let ud = UserDefaultsManager.shared
+    
+    let listLabel = UILabel()
+    let bagImage = BagImage()
+    let countLabel = UILabel()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
@@ -23,14 +29,44 @@ class SettingTableViewCell: UITableViewCell {
     }
     
     func configureHierarchy() {
-        
+        contentView.addSubview(listLabel)
+        contentView.addSubview(countLabel)
+        contentView.addSubview(bagImage)
     }
     
     func configureLayout() {
+        listLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(contentView)
+            make.leading.equalTo(contentView).inset(16)
+        }
         
+        countLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(contentView)
+            make.trailing.equalTo(contentView).inset(16)
+        }
+        
+        bagImage.snp.makeConstraints { make in
+            make.trailing.equalTo(countLabel.snp.leading).offset(3)
+            make.centerY.equalTo(contentView)
+            make.size.equalTo(20)
+        }
     }
     
     func configureUI() {
-        
+        listLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.regular15, cornerRadius: 0, numberLine: 1)
+        countLabel.setUILabel("", textAlignment: .right, color: Color.black, backgroundColor: .clear, font: Font.bold15, cornerRadius: 0, numberLine: 1)
     }
+    
+    func configureData(data: String, indexPath: IndexPath) {
+        listLabel.text = data
+        if indexPath.row == 0 {
+            countLabel.isHidden = false
+            bagImage.isHidden = false
+            countLabel.text = "\(ud.likeId.count)개의 상품"
+        } else {
+            countLabel.isHidden = true
+            bagImage.isHidden = true
+        }
+    }
+    
 }

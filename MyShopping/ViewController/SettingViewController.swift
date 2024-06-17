@@ -37,9 +37,11 @@ class SettingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let nickname = ud.nickname, let imagename = ud.profileName else { return }
+        guard let nickname = ud.nickname, let imagename = ud.profileName else { print("aa")
+            return }
         nickName.text = nickname
         imageView.image = UIImage(named: imagename)
+        tableView.reloadData()
     }
 }
 
@@ -112,7 +114,7 @@ extension SettingViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorColor = .black
-        tableView.rowHeight = 44
+        tableView.rowHeight = 55
         tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
     }
     
@@ -145,13 +147,13 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as! SettingTableViewCell
-        cell.textLabel?.text = SettingOption.allCases[indexPath.row].rawValue
+        cell.configureData(data: SettingOption.allCases[indexPath.row].rawValue, indexPath: indexPath)
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
+        tableView.reloadRows(at: [indexPath], with: .automatic)
         switch indexPath.row {
         case 0: print("")
         case 1: print("")

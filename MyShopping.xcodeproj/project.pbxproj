@@ -55,6 +55,7 @@
 		7207115D2C20132E00DEB707 /* CameraImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207115C2C20132E00DEB707 /* CameraImage.swift */; };
 		7207115F2C20176500DEB707 /* Requirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7207115E2C20176500DEB707 /* Requirement.swift */; };
 		720711622C204F7800DEB707 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 720711612C204F7800DEB707 /* IQKeyboardManagerSwift */; };
+		720711642C20776400DEB707 /* BagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711632C20776300DEB707 /* BagImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +105,7 @@
 		7207112F2C1F5EE700DEB707 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		7207115C2C20132E00DEB707 /* CameraImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraImage.swift; sourceTree = "<group>"; };
 		7207115E2C20176500DEB707 /* Requirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirement.swift; sourceTree = "<group>"; };
+		720711632C20776300DEB707 /* BagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 				720711102C1DED0F00DEB707 /* ChevronImage.swift */,
 				720711242C1EA33000DEB707 /* ProductImage.swift */,
 				7207115C2C20132E00DEB707 /* CameraImage.swift */,
+				720711632C20776300DEB707 /* BagImage.swift */,
 			);
 			path = ImageView;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				720711302C1F5EE700DEB707 /* ViewType.swift in Sources */,
 				7207115D2C20132E00DEB707 /* CameraImage.swift in Sources */,
 				720710E42C1B0FA600DEB707 /* ProfileImage.swift in Sources */,
+				720711642C20776400DEB707 /* BagImage.swift in Sources */,
 				720710F82C1C203500DEB707 /* ReuseIdentifierProtocol.swift in Sources */,
 				720710E22C1B0ACB00DEB707 /* NicknameViewController.swift in Sources */,
 				7207115F2C20176500DEB707 /* Requirement.swift in Sources */,
