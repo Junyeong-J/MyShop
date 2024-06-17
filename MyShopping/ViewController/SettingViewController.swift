@@ -30,8 +30,8 @@ class SettingViewController: UIViewController {
         configureLayout()
         configureUI()
         
+        setUI()
         tapGesture()
-        
         configureTableView()
     }
     
@@ -97,9 +97,14 @@ extension SettingViewController {
     }
     
     func configureUI(){
-        view.backgroundColor = .white
-        headerView.backgroundColor = .white
-        dateLabel.text = "aaaa"
+        view.backgroundColor = Color.white
+        
+        headerView.backgroundColor = Color.white
+        
+        nickName.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.bold17, cornerRadius: 0, numberLine: 1)
+        
+        dateLabel.setUILabel("", textAlignment: .left, color: Color.gray, backgroundColor: .clear, font: Font.regular13, cornerRadius: 0, numberLine: 1)
+        
     }
     
     func configureTableView() {
@@ -115,6 +120,13 @@ extension SettingViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(headerViewClicked))
         headerView.addGestureRecognizer(tapGesture)
         headerView.isUserInteractionEnabled = true
+    }
+    
+    func setUI() {
+        guard let nickname = ud.nickname, let imagename = ud.profileName, let date = ud.joinDate else { return }
+        nickName.text = nickname
+        imageView.image = UIImage(named: imagename)
+        dateLabel.text = "\(date) 가입"
     }
     
     @objc func headerViewClicked() {

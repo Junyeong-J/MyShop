@@ -13,8 +13,10 @@ class UserDefaultsManager {
     
     let profileForKey = "profileName"
     let nicknameForKey = "nickname"
+    let date = "joinDate"
     let searchHistoryForKey = "searchHistory"
     let user = "isUser"
+    
     //MARK: - 프로필
     var profileName: String? {
         get {
@@ -27,6 +29,7 @@ class UserDefaultsManager {
             UserDefaults.standard.set(newValue, forKey: profileForKey)
         }
     }
+    
     //MARK: - 닉네임
     var nickname: String? {
         get {
@@ -37,6 +40,19 @@ class UserDefaultsManager {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: nicknameForKey)
+        }
+    }
+    
+    //MARK: - 회원가입 날짜
+    var joinDate: String? {
+        get {
+            guard let nowDate = UserDefaults.standard.string(forKey: date) else {
+                return nil
+            }
+            return nowDate
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: date)
         }
     }
     
@@ -75,6 +91,7 @@ class UserDefaultsManager {
     func clearAllData() {
         UserDefaults.standard.removeObject(forKey: profileForKey)
         UserDefaults.standard.removeObject(forKey: nicknameForKey)
+        UserDefaults.standard.removeObject(forKey: date)
         UserDefaults.standard.removeObject(forKey: searchHistoryForKey)
         UserDefaults.standard.removeObject(forKey: user)
     }

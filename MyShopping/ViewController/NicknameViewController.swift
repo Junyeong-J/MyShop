@@ -150,6 +150,14 @@ extension NicknameViewController {
         }
     }
     
+    func joinDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        let todayDate = dateFormatter.string(from: Date())
+        
+        return todayDate
+    }
+    
     @objc func backButtonClicked() {
         navigationController?.popViewController(animated: true)
     }
@@ -163,7 +171,9 @@ extension NicknameViewController {
     @objc func successButtonClicked() {
         guard let nick = textField.text else {return}
         ud.nickname = nick
+        ud.joinDate = joinDate()
         ud.isUser()
+        
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         
