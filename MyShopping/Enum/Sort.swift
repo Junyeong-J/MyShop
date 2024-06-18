@@ -8,10 +8,10 @@
 import UIKit
 
 enum Sort: String, CaseIterable {
-    case accuracy = "  정확도  "
-    case date = "  날짜순  "
-    case highPrice = "  가격높은순  "
-    case lowPrice = "  가격낮은순  "
+    case accuracy = "정확도"
+    case date = "날짜순"
+    case highPrice = "가격높은순"
+    case lowPrice = "가격낮은순"
     
     func sortTargets() -> String {
         switch self {

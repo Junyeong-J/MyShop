@@ -91,7 +91,7 @@ extension SearchResultViewController {
         }
         
         stackView.snp.makeConstraints { make in
-            make.leading.equalTo(categoryView).inset(20)
+            make.leading.trailing.equalTo(categoryView).inset(20)
             make.top.equalTo(countLabel.snp.bottom).offset(10)
             make.height.equalTo(30)
             
@@ -108,7 +108,7 @@ extension SearchResultViewController {
         view.backgroundColor = Color.white
         stackView.spacing = 10
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         
         countLabel.setUILabel("", textAlignment: .left, color: Color.myShopMainColor, backgroundColor: .clear, font: Font.bold13, cornerRadius: 0, numberLine: 1)
         
