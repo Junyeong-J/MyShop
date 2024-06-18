@@ -10,7 +10,7 @@ import SnapKit
 import Toast
 
 class SearchViewController: UIViewController {
-
+    
     let deviceWidth = UIScreen.main.bounds.size.width
     
     let emptyImageView = EmptyImage(title: "empty")
@@ -34,7 +34,7 @@ class SearchViewController: UIViewController {
         super.viewWillAppear(animated)
         titleSet()
     }
-
+    
 }
 
 extension SearchViewController {
@@ -82,7 +82,7 @@ extension SearchViewController {
         tableView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
         }
-
+        
     }
     
     func configureUI() {
@@ -116,10 +116,25 @@ extension SearchViewController {
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let searchText = searchBar.text, !searchText.isEmpty else { 
+        guard let searchText = searchBar.text, !searchText.isEmpty else {
             self.view.makeToast("검색어가 잘못 입력되었습니다.")
             return
         }
+        
+        do {
+            let result = try validateUserInput(text: searchText)
+            print(result)
+        } catch ValidationError.emptyString {
+            self.view.makeToast("검색어를 입력하세요")
+            return
+        } catch ValidationError.trimmingCharacters {
+            self.view.makeToast("공백만 검색이 안됩니다")
+            return
+        } catch {
+            self.view.makeToast("검색어 문제입니다.")
+            return
+        }
+        
         ud.saveSearchWord(word: searchText)
         tableView.reloadData()
         screenLayout()
@@ -127,6 +142,22 @@ extension SearchViewController: UISearchBarDelegate {
         let vc = SearchResultViewController()
         vc.navigationTitle = searchText
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func validateUserInput(text: String) throws -> Bool {
+        guard !(text.isEmpty) else {
+            throw ValidationError.emptyString
+        }
+        
+        guard !isOnlyWhitespace(text: text) else {
+            throw ValidationError.trimmingCharacters
+        }
+        
+        return true
+    }
+    
+    func isOnlyWhitespace(text: String) -> Bool {
+        return text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 }
 

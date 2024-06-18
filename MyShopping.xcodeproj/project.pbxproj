@@ -58,6 +58,7 @@
 		720711662C20846300DEB707 /* ProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711652C20846300DEB707 /* ProfileProtocol.swift */; };
 		720711692C2097FC00DEB707 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 720711682C2097FC00DEB707 /* Toast */; };
 		7207116C2C20A52B00DEB707 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7207116B2C20A52B00DEB707 /* SkeletonView */; };
+		721BE0A02C2186AB00428CF8 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721BE09F2C2186AB00428CF8 /* ValidationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +109,7 @@
 		7207115E2C20176500DEB707 /* Requirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirement.swift; sourceTree = "<group>"; };
 		720711632C20776300DEB707 /* BagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagImage.swift; sourceTree = "<group>"; };
 		720711652C20846300DEB707 /* ProfileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocol.swift; sourceTree = "<group>"; };
+		721BE09F2C2186AB00428CF8 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 				720711292C1EAEA600DEB707 /* Sort.swift */,
 				7207112F2C1F5EE700DEB707 /* ViewType.swift */,
 				7207115E2C20176500DEB707 /* Requirement.swift */,
+				721BE09F2C2186AB00428CF8 /* ValidationError.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				720710F82C1C203500DEB707 /* ReuseIdentifierProtocol.swift in Sources */,
 				720710E22C1B0ACB00DEB707 /* NicknameViewController.swift in Sources */,
 				7207115F2C20176500DEB707 /* Requirement.swift in Sources */,
+				721BE0A02C2186AB00428CF8 /* ValidationError.swift in Sources */,
 				720710E92C1B149B00DEB707 /* TextFieldPlaceholder.swift in Sources */,
 				720710D92C1AFA7A00DEB707 /* MainPosterImageView.swift in Sources */,
 				720710DB2C1AFE2A00DEB707 /* AppTitleLabel.swift in Sources */,
