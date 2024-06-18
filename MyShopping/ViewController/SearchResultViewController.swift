@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SnapKit
+import SkeletonView
 
 class SearchResultViewController: UIViewController {
     
@@ -194,6 +195,7 @@ extension SearchResultViewController {
 }
 
 extension SearchResultViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.items.count
     }

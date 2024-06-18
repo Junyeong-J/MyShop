@@ -57,6 +57,7 @@
 		720711642C20776400DEB707 /* BagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711632C20776300DEB707 /* BagImage.swift */; };
 		720711662C20846300DEB707 /* ProfileProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720711652C20846300DEB707 /* ProfileProtocol.swift */; };
 		720711692C2097FC00DEB707 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 720711682C2097FC00DEB707 /* Toast */; };
+		7207116C2C20A52B00DEB707 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7207116B2C20A52B00DEB707 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 				720711622C204F7800DEB707 /* IQKeyboardManagerSwift in Frameworks */,
 				720710E02C1B01FD00DEB707 /* SnapKit in Frameworks */,
 				720711692C2097FC00DEB707 /* Toast in Frameworks */,
+				7207116C2C20A52B00DEB707 /* SkeletonView in Frameworks */,
 				720711202C1E9D9700DEB707 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +306,7 @@
 				720711272C1EA73900DEB707 /* Kingfisher */,
 				720711612C204F7800DEB707 /* IQKeyboardManagerSwift */,
 				720711682C2097FC00DEB707 /* Toast */,
+				7207116B2C20A52B00DEB707 /* SkeletonView */,
 			);
 			productName = MyShopping;
 			productReference = 720710B52C1AD8EE00DEB707 /* MyShopping.app */;
@@ -339,6 +342,7 @@
 				720711262C1EA73900DEB707 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				720711602C204F7800DEB707 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				720711672C2097FC00DEB707 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				7207116A2C20A52B00DEB707 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 720710B62C1AD8EE00DEB707 /* Products */;
 			projectDirPath = "";
@@ -675,6 +679,14 @@
 				minimumVersion = 5.1.1;
 			};
 		};
+		7207116A2C20A52B00DEB707 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.31.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -702,6 +714,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 720711672C2097FC00DEB707 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		7207116B2C20A52B00DEB707 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7207116A2C20A52B00DEB707 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

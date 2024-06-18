@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 import SnapKit
+import SkeletonView
 
 class SearchResultCollectionViewCell: UICollectionViewCell {
     
@@ -76,19 +77,38 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         
         titleLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.regular14, cornerRadius: 0, numberLine: 2)
         
-        priceLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.bold17, cornerRadius: 0, numberLine: 1)
+        priceLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.bold16, cornerRadius: 0, numberLine: 1)
     }
     
     func configureData(data: ShopItems, indexPath: IndexPath) {
-        
+        skeletonViewStart()
         let imageUrl = URL(string: data.image)
         productImageView.kf.setImage(with: imageUrl)
         mallNameLabel.text = data.mallName
         titleLabel.text = data.setTitle
         priceLabel.text = data.formatPrice
         likeButton.tag = indexPath.row
-
         likeButtonUI(isLiked: data.isliked)
+        skeletonViewFinish()
+    }
+    
+    func likeButtonUI(isLiked: Bool) {
+        if isLiked {
+            likeButton.backgroundColor = Color.white
+            likeButton.tintColor = Color.black
+        } else {
+            likeButton.backgroundColor = Color.blackAlpha50
+            likeButton.tintColor = Color.white
+        }
+    }
+    
+    func skeletonViewStart() {
+        contentView.isSkeletonable = true
+        contentView.showAnimatedGradientSkeleton()
+    }
+    
+    func skeletonViewFinish() {
+        contentView.hideSkeleton()
     }
     
     @objc func likeButtonClicked() {
@@ -104,13 +124,4 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         likeButtonUI(isLiked: isLiked)
     }
     
-    func likeButtonUI(isLiked: Bool) {
-        if isLiked {
-            likeButton.backgroundColor = Color.white
-            likeButton.tintColor = Color.black
-        } else {
-            likeButton.backgroundColor = Color.blackAlpha50
-            likeButton.tintColor = Color.white
-        }
-    }
 }

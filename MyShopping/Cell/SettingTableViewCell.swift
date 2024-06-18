@@ -63,10 +63,18 @@ class SettingTableViewCell: UITableViewCell {
             countLabel.isHidden = false
             bagImage.isHidden = false
             countLabel.text = "\(ud.likeId.count)개의 상품"
+            attributeSetString()
         } else {
             countLabel.isHidden = true
             bagImage.isHidden = true
         }
+    }
+    
+    func attributeSetString() {
+        let attributeString = NSMutableAttributedString(string: countLabel.text!)
+        let font = UIFont.systemFont(ofSize: 15)
+        attributeString.addAttribute(.font, value: font, range: (countLabel.text! as NSString).range(of: "개의 상품"))
+        self.countLabel.attributedText = attributeString
     }
     
 }
