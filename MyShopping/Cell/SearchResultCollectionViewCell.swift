@@ -96,9 +96,11 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     func likeButtonUI(isLiked: Bool) {
         if isLiked {
             likeButton.backgroundColor = Color.white
+            likeButton.setImage(UIImage(named: "like_selected"), for: .normal)
             likeButton.tintColor = Color.black
         } else {
             likeButton.backgroundColor = Color.blackAlpha50
+            likeButton.setImage(UIImage(named: "like_unselected"), for: .normal)
             likeButton.tintColor = Color.white
         }
     }

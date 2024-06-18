@@ -35,8 +35,8 @@ extension DetailWebViewController {
     func makeNavigationUI() {
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonClicked))
         navigationItem.leftBarButtonItem = backButton
-        let likeImage = data.isliked == true ? "bag.fill" : "bag"
-        let likeButton = UIBarButtonItem(image: UIImage(systemName: likeImage), style: .plain, target: self, action: #selector(likeButtonClicked))
+        let likeImage = data.isliked == true ? "like_selected" : "like_unselected"
+        let likeButton = UIBarButtonItem(image: UIImage(named: likeImage)?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(likeButtonClicked))
         navigationItem.rightBarButtonItem = likeButton
         navigationController?.navigationBar.tintColor = Color.black
         navigationItem.title = data.setTitle
@@ -77,8 +77,8 @@ extension DetailWebViewController {
     }
     
     func likeButtonUI(isLiked: Bool) {
-        let likeImage = isLiked ? "bag.fill" : "bag"
-        let likeButton = UIBarButtonItem(image: UIImage(systemName: likeImage), style: .plain, target: self, action: #selector(likeButtonClicked))
+        let likeImage = isLiked ? "like_selected" : "like_unselected"
+        let likeButton = UIBarButtonItem(image: UIImage(named: likeImage)?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(likeButtonClicked))
         navigationItem.rightBarButtonItem = likeButton
     }
 }

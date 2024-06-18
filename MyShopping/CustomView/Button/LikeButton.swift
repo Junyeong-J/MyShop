@@ -12,10 +12,9 @@ class LikeButton: UIButton {
     init(backColor: UIColor, tint: UIColor) {
         super.init(frame: .zero)
         
-        let imageConfig = UIImage.SymbolConfiguration(pointSize: 18, weight: .light)
-        let image = UIImage(systemName: "bag.fill", withConfiguration: imageConfig)
+        let bagImage = UIImage(named: "like_unselected")
         backgroundColor = backColor
-        setImage(image, for: .normal)
+        setImage(bagImage, for: .normal)
         tintColor = tint
         layer.cornerRadius = 5
     }
