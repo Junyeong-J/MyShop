@@ -156,7 +156,7 @@ extension SearchResultViewController {
                     self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
                 }
             case .failure(let error):
-                print(error)
+                self.view.makeToast("네트워크 에러입니다. 잠시후 다시 사용해 주세요.")
             }
         }
     }
