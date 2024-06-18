@@ -120,10 +120,8 @@ extension SearchViewController: UISearchBarDelegate {
             self.view.makeToast("검색어가 잘못 입력되었습니다.")
             return
         }
-        
         do {
             let result = try validateUserInput(text: searchText)
-            print(result)
         } catch ValidationError.emptyString {
             self.view.makeToast("검색어를 입력하세요")
             return
