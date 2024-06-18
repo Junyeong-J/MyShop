@@ -563,7 +563,7 @@
 				DEVELOPMENT_TEAM = QQN262X7KM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyShopping/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MyShop;
+				INFOPLIST_KEY_CFBundleDisplayName = "전준영";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -596,7 +596,7 @@
 				DEVELOPMENT_TEAM = QQN262X7KM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyShopping/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = MyShop;
+				INFOPLIST_KEY_CFBundleDisplayName = "전준영";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
