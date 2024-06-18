@@ -12,7 +12,7 @@ class RecentImage: UIImageView {
     init() {
         super.init(frame: .zero)
         image = UIImage(systemName: "clock")
-        tintColor = .black
+        tintColor = Color.black
     }
     
     required init?(coder: NSCoder) {

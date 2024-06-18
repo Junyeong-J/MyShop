@@ -170,8 +170,8 @@ extension SearchResultViewController {
         let sortButtonList = [accuracyButton, dateButton, highPriceButton, lowPriceButton]
         
         for sortbutton in sortButtonList {
-            sortbutton.backgroundColor = .white
-            sortbutton.setTitleColor(.black, for: .normal)
+            sortbutton.backgroundColor = Color.white
+            sortbutton.setTitleColor(Color.black, for: .normal)
         }
         
         sender.backgroundColor = Color.buttonBackground
@@ -203,7 +203,7 @@ extension SearchResultViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearchResultCollectionViewCell.identifier, for: indexPath) as! SearchResultCollectionViewCell
         cell.id = list.items[indexPath.item].productId
-        cell.configureData(data: list.items[indexPath.item], indexPath: indexPath)
+        cell.configureData(data: list.items[indexPath.item], indexPath: indexPath, highLight: navigationTitle)
         return cell
     }
     

@@ -13,7 +13,7 @@ class CategoryButton: UIButton {
         super.init(frame: .zero)
         
         setTitle(title, for: .normal)
-        setTitleColor(.black, for: .normal)
+        setTitleColor(Color.black, for: .normal)
         titleLabel?.font = Font.regular15
         backgroundColor = Color.white
         layer.borderColor = UIColor.lightGray.cgColor

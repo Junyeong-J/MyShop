@@ -80,7 +80,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         priceLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.bold16, cornerRadius: 0, numberLine: 1)
     }
     
-    func configureData(data: ShopItems, indexPath: IndexPath) {
+    func configureData(data: ShopItems, indexPath: IndexPath, highLight: String) {
         skeletonViewStart()
         let imageUrl = URL(string: data.image)
         productImageView.kf.setImage(with: imageUrl)
@@ -89,6 +89,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         priceLabel.text = data.formatPrice
         likeButton.tag = indexPath.row
         likeButtonUI(isLiked: data.isliked)
+        attributeSetString(titleLabel, changeString: highLight)
         skeletonViewFinish()
     }
     
@@ -122,6 +123,13 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
         
         let isLiked = ud.likeId.contains(productId)
         likeButtonUI(isLiked: isLiked)
+    }
+    
+    func attributeSetString(_ label: UILabel, changeString: String) {
+        let attributeString = NSMutableAttributedString(string: label.text!)
+        let font = UIFont.systemFont(ofSize: 14, weight: .black)
+        attributeString.addAttribute(.font, value: font, range: (label.text! as NSString).range(of: changeString))
+        label.attributedText = attributeString
     }
     
 }

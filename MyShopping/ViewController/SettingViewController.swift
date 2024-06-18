@@ -112,7 +112,7 @@ extension SettingViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.separatorColor = .black
+        tableView.separatorColor = Color.black
         tableView.rowHeight = 55
         tableView.register(SettingTableViewCell.self, forCellReuseIdentifier: SettingTableViewCell.identifier)
     }

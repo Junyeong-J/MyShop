@@ -12,7 +12,7 @@ class ChevronImage: UIImageView {
     init(){
         super.init(frame: .zero)
         image = UIImage(systemName: "chevron.right")
-        tintColor = .black
+        tintColor = Color.black
     }
     
     required init?(coder: NSCoder) {

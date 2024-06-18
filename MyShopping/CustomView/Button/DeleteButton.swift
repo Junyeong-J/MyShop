@@ -12,7 +12,7 @@ class DeleteButton: UIButton {
     init() {
         super.init(frame: .zero)
         setImage(UIImage(systemName: "xmark"), for: .normal)
-        tintColor = .black
+        tintColor = Color.black
     }
     
     required init?(coder: NSCoder) {

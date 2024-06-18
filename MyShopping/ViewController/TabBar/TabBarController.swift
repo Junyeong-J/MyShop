@@ -13,7 +13,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
 
         tabBar.tintColor = Color.myShopMainColor
-        tabBar.unselectedItemTintColor = .gray
+        tabBar.unselectedItemTintColor = Color.gray
         
         let search = SearchViewController()
         let nav1 = UINavigationController(rootViewController: search)
