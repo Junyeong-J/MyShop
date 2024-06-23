@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Alamofire
 import SnapKit
 import SkeletonView
 
@@ -47,7 +46,7 @@ class SearchResultViewController: UIViewController {
         configureUI()
         
         configureCollectionView()
-        callRequset(query: navigationTitle, sort: sort.sortTargets())
+        callRequest(query: navigationTitle, sort: sort.sortTargets())
         
         addTargets()
     }
@@ -130,33 +129,27 @@ extension SearchResultViewController {
         lowPriceButton.addTarget(self, action: #selector(sortButtonClikced), for: .touchUpInside)
     }
     
-    func callRequset(query: String, sort: String) {
-        let url = APIURL.naverShopURL
-        let params = [
-            "query" : query,
-            "display": 30,
-            "start": start,
-            "sort": sort
-        ] as [String : Any]
-        
-        let headers: HTTPHeaders = ["X-Naver-Client-Id": APIKey.naverClient_id,
-                                    "X-Naver-Client-Secret": APIKey.naverClient_secret]
-        AF.request(url, parameters: params, headers: headers).responseDecodable(of: Shop.self) { response in
-            switch response.result{
-            case .success(let value):
-                self.countLabel.text = value.totalDescription
-                if self.start == 1{
-                    self.list = value
-                } else {
-                    self.list.items.append(contentsOf: value.items)
+    func callRequest(query: String, sort: String) {
+        DispatchQueue.global().async{
+            NaverShopManager.shared.getNaverShop(query: query, sort: sort, start: self.start) { result in
+                DispatchQueue.main.async{
+                    switch result {
+                    case .success(let value):
+                        self.countLabel.text = value.totalDescription
+                        if self.start == 1{
+                            self.list = value
+                        } else {
+                            self.list.items.append(contentsOf: value.items)
+                        }
+                        self.collectionView.reloadData()
+                        
+                        if self.start == 1 && !self.list.items.isEmpty {
+                            self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+                        }
+                    case .failure(_):
+                        self.view.makeToast("네트워크 에러입니다. 잠시후 다시 사용해 주세요.")
+                    }
                 }
-                self.collectionView.reloadData()
-                
-                if self.start == 1 && !self.list.items.isEmpty {
-                    self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-                }
-            case .failure(let error):
-                self.view.makeToast("네트워크 에러입니다. 잠시후 다시 사용해 주세요.")
             }
         }
     }
@@ -189,7 +182,7 @@ extension SearchResultViewController {
             return
         }
         start = 1
-        callRequset(query: navigationTitle, sort: sort.sortTargets())
+        callRequest(query: navigationTitle, sort: sort.sortTargets())
     }
     
 }
@@ -220,7 +213,7 @@ extension SearchResultViewController: UICollectionViewDataSourcePrefetching {
         for item in indexPaths {
             if list.items.count - 6 == item.item && list.start < list.total{
                 start += 30
-                callRequset(query: navigationTitle, sort: sort.sortTargets())
+                callRequest(query: navigationTitle, sort: sort.sortTargets())
             }
         }
     }
