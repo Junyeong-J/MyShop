@@ -209,31 +209,46 @@ extension NicknameViewController: UITextFieldDelegate {
             return
         }
         
-        if textLength(text: text) {
-            if text.range(of: "\\d", options: .regularExpression) != nil {
-                stateLabel.text = Requirement.number.rawValue
-                changeButton(isEnabled: false)
-            } else if text.range(of:"@") != nil {
-                stateLabel.text = Requirement.at.rawValue
-                changeButton(isEnabled: false)
-            } else if text.range(of:"#") != nil {
-                stateLabel.text = Requirement.hash.rawValue
-                changeButton(isEnabled: false)
-            } else if text.range(of:"$") != nil {
-                stateLabel.text = Requirement.dollar.rawValue
-                changeButton(isEnabled: false)
-            } else if text.range(of:"%") != nil {
-                stateLabel.text = Requirement.percent.rawValue
-                changeButton(isEnabled: false)
-            } else {
-                stateLabel.text = Requirement.correct.rawValue
-                changeButton(isEnabled: true)
-            }
-        } else {
-            stateLabel.text = Requirement.count.rawValue
+        do { try requestNickname(text: text)
+            stateLabel.text = NicknameError.correct.eachError
+            changeButton(isEnabled: true)
+        } catch let error as NicknameError{
+            stateLabel.text = error.eachError
+            changeButton(isEnabled: false)
+        } catch {
+            self.view.makeToast("텍스트 필드에 잘못 입력되었습니다.")
             changeButton(isEnabled: false)
         }
+    }
+    
+    func requestNickname(text: String) throws {
+        if !textLength(text: text) {
+            throw NicknameError.count
+        }
         
+        if text.range(of: "\\d", options: .regularExpression) != nil {
+            throw NicknameError.number
+        }
+        
+        if text.contains("@") {
+            throw NicknameError.at
+        }
+        
+        if text.contains("#") {
+            throw NicknameError.hash
+        }
+        
+        if text.contains("$") {
+            throw NicknameError.dollar
+        }
+        
+        if text.contains("%") {
+            throw NicknameError.percent
+        }
+        
+        if text.contains("%") {
+            throw NicknameError.percent
+        }
     }
     
     func textLength(text: String) -> Bool {
