@@ -158,9 +158,8 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         case 1: toastMessage(message: "준비중 입니다.")
         case 2: toastMessage(message: "준비중 입니다.")
         case 3: toastMessage(message: "준비중 입니다.")
-        case 4: let alert = UIAlertController(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화됩니다. 탈퇴 하시겠습니까?", preferredStyle: .alert)
-            
-            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: { _ in
+        case 4: 
+            showAlert(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화됩니다.", ok: "확인") {
                 self.ud.clearAllData()
                 
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
@@ -169,10 +168,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
                 let rootViewController = UINavigationController(rootViewController: OnBoardingViewController())
                 sceneDelegate?.window?.rootViewController = rootViewController
                 sceneDelegate?.window?.makeKeyAndVisible()
-            }))
-            alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
-            
-            present(alert, animated: true)
+            }
         default:
             toastMessage(message: "앱을 끄고 다시 실행해 주세요.")
         }

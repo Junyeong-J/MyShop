@@ -60,6 +60,7 @@
 		7207116C2C20A52B00DEB707 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7207116B2C20A52B00DEB707 /* SkeletonView */; };
 		72154C872C28364D00EEF679 /* NaverShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154C862C28364D00EEF679 /* NaverShopManager.swift */; };
 		72154C892C2838D400EEF679 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154C882C2838D400EEF679 /* NetworkError.swift */; };
+		72154CC62C29B17500EEF679 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154CC52C29B17500EEF679 /* UIViewController+Extension.swift */; };
 		721BE0A02C2186AB00428CF8 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721BE09F2C2186AB00428CF8 /* ValidationError.swift */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,7 @@
 		720711652C20846300DEB707 /* ProfileProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileProtocol.swift; sourceTree = "<group>"; };
 		72154C862C28364D00EEF679 /* NaverShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverShopManager.swift; sourceTree = "<group>"; };
 		72154C882C2838D400EEF679 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		72154CC52C29B17500EEF679 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		721BE09F2C2186AB00428CF8 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				720710EE2C1B275500DEB707 /* UILabel+Extension.swift */,
+				72154CC52C29B17500EEF679 /* UIViewController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				720710EF2C1B275500DEB707 /* UILabel+Extension.swift in Sources */,
 				720711032C1D5BD500DEB707 /* SearchTableViewCell.swift in Sources */,
 				720710FF2C1C819400DEB707 /* SettingViewController.swift in Sources */,
+				72154CC62C29B17500EEF679 /* UIViewController+Extension.swift in Sources */,
 				720711222C1E9DD400DEB707 /* Shop.swift in Sources */,
 				720711662C20846300DEB707 /* ProfileProtocol.swift in Sources */,
 				720710BB2C1AD8EE00DEB707 /* SceneDelegate.swift in Sources */,
