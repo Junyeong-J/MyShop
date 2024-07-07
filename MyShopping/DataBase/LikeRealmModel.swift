@@ -14,16 +14,20 @@ class LikeListTable: Object {
     @Persisted var productTitle: String
     @Persisted var mallName: String
     @Persisted var price: String
+    @Persisted var image: String
+    @Persisted var link: String
     @Persisted var favorite: Bool
     @Persisted var regdate: Date
     
-    convenience init(productId: String, productTitle: String, mallName: String, price: String, regdate: Date) {
+    convenience init(productId: String, productTitle: String, mallName: String, price: String, image: String, link: String, regdate: Date) {
         self.init()
         self.productId = productId
         self.productTitle = productTitle
         self.mallName = mallName
         self.price = price
-        self.favorite = false
+        self.image = image
+        self.link = link
+        self.favorite = true
         self.regdate = regdate
     }
     
