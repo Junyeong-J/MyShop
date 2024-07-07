@@ -13,6 +13,7 @@ class DetailWebViewController: UIViewController {
     
     let webView = WKWebView()
     
+    let repository = LikeListTableRepository()
     let ud = UserDefaultsManager.shared
     var data = ShopItems(title: "", link: "", image: "", lprice: "", mallName: "", productId: "")
     
@@ -67,10 +68,14 @@ extension DetailWebViewController {
     }
     
     @objc func likeButtonClicked() {
+        let data = LikeListTable(productId: data.productId, productTitle: data.setTitle, mallName: data.mallName, price: data.formatPrice, image: data.image, link: data.link, regdate: Date())
+        
         if ud.likeId.contains(data.productId) {
             ud.removeLikeId(id: data.productId)
+            repository.deleteIdItem(data)
         } else {
             ud.saveLikeId(id: data.productId)
+            repository.createItem(data)
         }
         let isLiked = ud.likeId.contains(data.productId)
         likeButtonUI(isLiked: isLiked)
