@@ -84,4 +84,11 @@ extension LikeListViewController: UITableViewDelegate, UITableViewDataSource {
         let configuration = UISwipeActionsConfiguration(actions: [delete])
         return configuration
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailWebViewController()
+        let data = list[indexPath.row]
+        vc.data = ShopItems(title: data.productTitle, link: data.link, image: data.image, lprice: data.price, mallName: data.mallName, productId: data.productId)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
