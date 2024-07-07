@@ -12,5 +12,6 @@ enum ViewType: String {
     case new = "PROFILE SETTING"
     case old = "EDIT PROFILE"
     case set = "SETTING"
+    case like = "LIKELIST"
     
 }
