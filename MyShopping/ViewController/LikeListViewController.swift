@@ -14,6 +14,7 @@ class LikeListViewController: BaseViewController {
     let likeTableView = UITableView()
     var list: Results<LikeListTable>!
     let repository = LikeListTableRepository()
+    let ud = UserDefaultsManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,5 +68,20 @@ extension LikeListViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: LikeListTableViewCell.identifier, for: indexPath) as! LikeListTableViewCell
         cell.configureData(data: list[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "좋아요 삭제") { (action, view, completionHandler) in
+            let productId = self.list[indexPath.row]
+            if self.ud.likeId.contains(productId.productId) {
+                self.ud.removeLikeId(id: productId.productId)
+                self.repository.deleteIdItem(productId)
+            }
+            self.likeTableView.reloadData()
+            completionHandler(true)
+        }
+        
+        let configuration = UISwipeActionsConfiguration(actions: [delete])
+        return configuration
     }
 }
