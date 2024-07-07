@@ -12,6 +12,7 @@ import Toast
 class SettingViewController: UIViewController {
     
     let ud = UserDefaultsManager.shared
+    let repository = LikeListTableRepository()
     
     let tableView = UITableView()
     let headerView = UIView()
@@ -161,6 +162,7 @@ extension SettingViewController: UITableViewDelegate, UITableViewDataSource {
         case 4: 
             showAlert(title: "탈퇴하기", message: "탈퇴를 하면 데이터가 모두 초기화됩니다.", ok: "확인") {
                 self.ud.clearAllData()
+                self.repository.deleteAll()
                 
                 let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
                 let sceneDelegate = windowScene?.delegate as? SceneDelegate

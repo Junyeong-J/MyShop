@@ -35,4 +35,15 @@ final class LikeListTableRepository {
     func fetchAll() -> Results<LikeListTable> {
         return realm.objects(LikeListTable.self).sorted(byKeyPath: "regdate", ascending: false)
     }
+    
+    func deleteAll() {
+        let allItems = realm.objects(LikeListTable.self)
+        do {
+            try realm.write {
+                realm.delete(allItems)
+            }
+        } catch {
+            print("Realm Error")
+        }
+    }
 }
