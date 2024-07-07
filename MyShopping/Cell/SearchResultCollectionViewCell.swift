@@ -9,9 +9,14 @@ import UIKit
 import Kingfisher
 import SnapKit
 import SkeletonView
+import RealmSwift
 
 class SearchResultCollectionViewCell: UICollectionViewCell {
     
+    var list: Results<LikeListTable>!
+    let repository = LikeListTableRepository()
+    
+    var itemsData = ShopItems(title: "", link: "", image: "", lprice: "", mallName: "", productId: "")
     let width = UIScreen.main.bounds.width
     let ud = UserDefaultsManager.shared
     var id: String?
@@ -82,6 +87,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     func configureData(data: ShopItems, indexPath: IndexPath, highLight: String) {
         skeletonViewStart()
+        self.itemsData = data
         let imageUrl = URL(string: data.image)
         productImageView.kf.setImage(with: imageUrl)
         mallNameLabel.text = data.mallName
@@ -116,11 +122,14 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     @objc func likeButtonClicked() {
         guard let productId = id else { return }
-
+        let data = LikeListTable(productId: productId, productTitle: itemsData.setTitle, mallName: itemsData.mallName, price: itemsData.lprice, regdate: Date())
+        
         if ud.likeId.contains(productId) {
             ud.removeLikeId(id: productId)
+            repository.deleteIdItem(data)
         } else {
             ud.saveLikeId(id: productId)
+            repository.createItem(data)
         }
         
         let isLiked = ud.likeId.contains(productId)

@@ -8,9 +8,10 @@
 import UIKit
 import SnapKit
 import Toast
+import RealmSwift
 
 class SearchViewController: UIViewController {
-    
+    let realm = try! Realm()
     let deviceWidth = UIScreen.main.bounds.size.width
     
     let emptyImageView = EmptyImage(title: "empty")
@@ -21,7 +22,7 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print(realm.configuration.fileURL)
         makeNavigationUI()
         configureHierarchy()
         configureLayout()

@@ -61,8 +61,31 @@
 		72154C872C28364D00EEF679 /* NaverShopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154C862C28364D00EEF679 /* NaverShopManager.swift */; };
 		72154C892C2838D400EEF679 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154C882C2838D400EEF679 /* NetworkError.swift */; };
 		72154CC62C29B17500EEF679 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154CC52C29B17500EEF679 /* UIViewController+Extension.swift */; };
+		72154D862C3A5F6300EEF679 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154D852C3A5F6300EEF679 /* BaseViewController.swift */; };
+		72154D882C3A600500EEF679 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154D872C3A600500EEF679 /* BaseTableViewCell.swift */; };
+		72154D8A2C3A601900EEF679 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154D892C3A601900EEF679 /* BaseCollectionViewCell.swift */; };
+		72154D8C2C3A62F600EEF679 /* LikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154D8B2C3A62F600EEF679 /* LikeListViewController.swift */; };
+		72154D8E2C3A6DC400EEF679 /* LikeListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154D8D2C3A6DC400EEF679 /* LikeListTableViewCell.swift */; };
+		72154D912C3A736900EEF679 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 72154D902C3A736900EEF679 /* RealmSwift */; };
+		72154D922C3A737300EEF679 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 72154D902C3A736900EEF679 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		72154D962C3A744000EEF679 /* LikeRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154D952C3A744000EEF679 /* LikeRealmModel.swift */; };
+		72154D982C3A763300EEF679 /* LikeListTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154D972C3A763300EEF679 /* LikeListTableRepository.swift */; };
 		721BE0A02C2186AB00428CF8 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721BE09F2C2186AB00428CF8 /* ValidationError.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		72154D932C3A737300EEF679 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				72154D922C3A737300EEF679 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		720710B52C1AD8EE00DEB707 /* MyShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +138,13 @@
 		72154C862C28364D00EEF679 /* NaverShopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverShopManager.swift; sourceTree = "<group>"; };
 		72154C882C2838D400EEF679 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		72154CC52C29B17500EEF679 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		72154D852C3A5F6300EEF679 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		72154D872C3A600500EEF679 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		72154D892C3A601900EEF679 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		72154D8B2C3A62F600EEF679 /* LikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListViewController.swift; sourceTree = "<group>"; };
+		72154D8D2C3A6DC400EEF679 /* LikeListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListTableViewCell.swift; sourceTree = "<group>"; };
+		72154D952C3A744000EEF679 /* LikeRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRealmModel.swift; sourceTree = "<group>"; };
+		72154D972C3A763300EEF679 /* LikeListTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListTableRepository.swift; sourceTree = "<group>"; };
 		721BE09F2C2186AB00428CF8 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +155,7 @@
 			files = (
 				720711282C1EA73900DEB707 /* Kingfisher in Frameworks */,
 				720711622C204F7800DEB707 /* IQKeyboardManagerSwift in Frameworks */,
+				72154D912C3A736900EEF679 /* RealmSwift in Frameworks */,
 				720710E02C1B01FD00DEB707 /* SnapKit in Frameworks */,
 				720711692C2097FC00DEB707 /* Toast in Frameworks */,
 				7207116C2C20A52B00DEB707 /* SkeletonView in Frameworks */,
@@ -155,6 +186,8 @@
 		720710B72C1AD8EE00DEB707 /* MyShopping */ = {
 			isa = PBXGroup;
 			children = (
+				72154D942C3A742400EEF679 /* DataBase */,
+				72154D842C3A5F4900EEF679 /* Base */,
 				72154C852C28361300EEF679 /* NetworkBasic */,
 				720711232C1E9DDC00DEB707 /* Struct */,
 				720710F62C1C202700DEB707 /* Protocol */,
@@ -185,6 +218,7 @@
 				720710FE2C1C819400DEB707 /* SettingViewController.swift */,
 				720711162C1E882A00DEB707 /* SearchResultViewController.swift */,
 				7207112B2C1F2EFB00DEB707 /* DetailWebViewController.swift */,
+				72154D8B2C3A62F600EEF679 /* LikeListViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -241,6 +275,7 @@
 				720711022C1D5BD500DEB707 /* SearchTableViewCell.swift */,
 				7207110E2C1DE52F00DEB707 /* SettingTableViewCell.swift */,
 				7207111A2C1E94A400DEB707 /* SearchResultCollectionViewCell.swift */,
+				72154D8D2C3A6DC400EEF679 /* LikeListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -304,6 +339,25 @@
 			path = NetworkBasic;
 			sourceTree = "<group>";
 		};
+		72154D842C3A5F4900EEF679 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				72154D852C3A5F6300EEF679 /* BaseViewController.swift */,
+				72154D872C3A600500EEF679 /* BaseTableViewCell.swift */,
+				72154D892C3A601900EEF679 /* BaseCollectionViewCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		72154D942C3A742400EEF679 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				72154D952C3A744000EEF679 /* LikeRealmModel.swift */,
+				72154D972C3A763300EEF679 /* LikeListTableRepository.swift */,
+			);
+			path = DataBase;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,6 +368,7 @@
 				720710B12C1AD8EE00DEB707 /* Sources */,
 				720710B22C1AD8EE00DEB707 /* Frameworks */,
 				720710B32C1AD8EE00DEB707 /* Resources */,
+				72154D932C3A737300EEF679 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -327,6 +382,7 @@
 				720711612C204F7800DEB707 /* IQKeyboardManagerSwift */,
 				720711682C2097FC00DEB707 /* Toast */,
 				7207116B2C20A52B00DEB707 /* SkeletonView */,
+				72154D902C3A736900EEF679 /* RealmSwift */,
 			);
 			productName = MyShopping;
 			productReference = 720710B52C1AD8EE00DEB707 /* MyShopping.app */;
@@ -363,6 +419,7 @@
 				720711602C204F7800DEB707 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				720711672C2097FC00DEB707 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				7207116A2C20A52B00DEB707 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+				72154D8F2C3A736900EEF679 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 720710B62C1AD8EE00DEB707 /* Products */;
 			projectDirPath = "";
@@ -399,18 +456,23 @@
 				720710FD2C1C818700DEB707 /* SearchViewController.swift in Sources */,
 				720710CD2C1ADB2600DEB707 /* OnBoardingViewController.swift in Sources */,
 				720710B92C1AD8EE00DEB707 /* AppDelegate.swift in Sources */,
+				72154D982C3A763300EEF679 /* LikeListTableRepository.swift in Sources */,
 				720710D12C1AF4EB00DEB707 /* PointButton.swift in Sources */,
 				7207110F2C1DE52F00DEB707 /* SettingTableViewCell.swift in Sources */,
 				72154C872C28364D00EEF679 /* NaverShopManager.swift in Sources */,
 				720711052C1D6DDB00DEB707 /* EmptyImage.swift in Sources */,
+				72154D862C3A5F6300EEF679 /* BaseViewController.swift in Sources */,
 				7207112C2C1F2EFB00DEB707 /* DetailWebViewController.swift in Sources */,
+				72154D962C3A744000EEF679 /* LikeRealmModel.swift in Sources */,
 				7207111B2C1E94A400DEB707 /* SearchResultCollectionViewCell.swift in Sources */,
 				720711192C1E8C9900DEB707 /* CategoryButton.swift in Sources */,
+				72154D882C3A600500EEF679 /* BaseTableViewCell.swift in Sources */,
 				720711302C1F5EE700DEB707 /* ViewType.swift in Sources */,
 				7207115D2C20132E00DEB707 /* CameraImage.swift in Sources */,
 				720710E42C1B0FA600DEB707 /* ProfileImage.swift in Sources */,
 				720711642C20776400DEB707 /* BagImage.swift in Sources */,
 				720710F82C1C203500DEB707 /* ReuseIdentifierProtocol.swift in Sources */,
+				72154D8A2C3A601900EEF679 /* BaseCollectionViewCell.swift in Sources */,
 				720710E22C1B0ACB00DEB707 /* NicknameViewController.swift in Sources */,
 				7207115F2C20176500DEB707 /* Requirement.swift in Sources */,
 				721BE0A02C2186AB00428CF8 /* ValidationError.swift in Sources */,
@@ -431,8 +493,10 @@
 				720711252C1EA33000DEB707 /* ProductImage.swift in Sources */,
 				720710F22C1C187C00DEB707 /* ProfileViewController.swift in Sources */,
 				7207112A2C1EAEA600DEB707 /* Sort.swift in Sources */,
+				72154D8C2C3A62F600EEF679 /* LikeListViewController.swift in Sources */,
 				720710ED2C1B26F500DEB707 /* SetLabel.swift in Sources */,
 				7207111D2C1E9C9700DEB707 /* APIKey.swift in Sources */,
+				72154D8E2C3A6DC400EEF679 /* LikeListTableViewCell.swift in Sources */,
 				720711152C1DFF3B00DEB707 /* Setting.swift in Sources */,
 				720710E62C1B140400DEB707 /* NicknameTextField.swift in Sources */,
 				7207110D2C1D7CAD00DEB707 /* DeleteButton.swift in Sources */,
@@ -711,6 +775,14 @@
 				minimumVersion = 1.31.0;
 			};
 		};
+		72154D8F2C3A736900EEF679 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.52.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -743,6 +815,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7207116A2C20A52B00DEB707 /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
+		};
+		72154D902C3A736900EEF679 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72154D8F2C3A736900EEF679 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

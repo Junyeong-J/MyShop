@@ -40,26 +40,34 @@ class LikeListTableViewCell: BaseTableViewCell {
         mallNameLabel.snp.makeConstraints { make in
             make.leading.equalTo(productImageView.snp.trailing).offset(20)
             make.trailing.equalTo(buttonImageView.snp.leading).offset(20)
-            make.top.equalTo(productImageView)
+            make.top.equalTo(productImageView).inset(5)
         }
         
         titleLabel.snp.makeConstraints { make in
             make.leading.equalTo(productImageView.snp.trailing).offset(20)
-            make.trailing.equalTo(buttonImageView.snp.leading).offset(20)
-            make.top.equalTo(mallNameLabel.snp.bottom).offset(1)
+            make.trailing.equalTo(buttonImageView.snp.leading).offset(-10)
+            make.top.equalTo(mallNameLabel.snp.bottom).offset(3)
         }
         
         priceLabel.snp.makeConstraints { make in
             make.leading.equalTo(productImageView.snp.trailing).offset(20)
             make.trailing.equalTo(buttonImageView.snp.leading).offset(20)
-            make.top.equalTo(titleLabel.snp.bottom).offset(1)
+            make.top.equalTo(titleLabel.snp.bottom).offset(3)
         }
         
         
     }
     
     override func configureView() {
-        
+        mallNameLabel.setUILabel("", textAlignment: .left, color: Color.lightGray, backgroundColor: .clear, font: Font.regular13, cornerRadius: 0, numberLine: 1)
+        titleLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.regular14, cornerRadius: 0, numberLine: 2)
+        priceLabel.setUILabel("", textAlignment: .left, color: Color.black, backgroundColor: .clear, font: Font.bold16, cornerRadius: 0, numberLine: 1)
+    }
+    
+    func configureData(data: LikeListTable){
+        mallNameLabel.text = data.mallName
+        titleLabel.text = data.productTitle
+        priceLabel.text = data.price
     }
     
 }
