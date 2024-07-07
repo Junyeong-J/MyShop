@@ -122,7 +122,7 @@ class SearchResultCollectionViewCell: UICollectionViewCell {
     
     @objc func likeButtonClicked() {
         guard let productId = id else { return }
-        let data = LikeListTable(productId: productId, productTitle: itemsData.setTitle, mallName: itemsData.mallName, price: itemsData.lprice, regdate: Date())
+        let data = LikeListTable(productId: productId, productTitle: itemsData.setTitle, mallName: itemsData.mallName, price: itemsData.formatPrice, image: itemsData.image, link: itemsData.link, regdate: Date())
         
         if ud.likeId.contains(productId) {
             ud.removeLikeId(id: productId)

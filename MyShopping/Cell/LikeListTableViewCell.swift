@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 class LikeListTableViewCell: BaseTableViewCell {
     
@@ -65,6 +66,8 @@ class LikeListTableViewCell: BaseTableViewCell {
     }
     
     func configureData(data: LikeListTable){
+        let imageUrl = URL(string: data.image)
+        productImageView.kf.setImage(with: imageUrl)
         mallNameLabel.text = data.mallName
         titleLabel.text = data.productTitle
         priceLabel.text = data.price
