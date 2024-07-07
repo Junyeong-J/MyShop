@@ -12,6 +12,8 @@ import RealmSwift
 class LikeListViewController: BaseViewController {
     
     let likeTableView = UITableView()
+    let searchBar = UISearchBar()
+    
     var list: Results<LikeListTable>!
     let repository = LikeListTableRepository()
     let ud = UserDefaultsManager.shared
@@ -20,6 +22,7 @@ class LikeListViewController: BaseViewController {
         super.viewDidLoad()
         makeNavigationUI()
         configureTableView()
+        configureSearchBar()
         
         list = repository.fetchAll()
     }
@@ -29,12 +32,19 @@ class LikeListViewController: BaseViewController {
     }
     
     override func configureHierarchy() {
+        view.addSubview(searchBar)
         view.addSubview(likeTableView)
     }
     
     override func configureConstraints() {
+        searchBar.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(44)
+        }
+        
         likeTableView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.horizontalEdges.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(searchBar.snp.bottom)
         }
     }
     
@@ -55,6 +65,11 @@ extension LikeListViewController {
         likeTableView.delegate = self
         likeTableView.rowHeight = 100
         likeTableView.register(LikeListTableViewCell.self, forCellReuseIdentifier: LikeListTableViewCell.identifier)
+    }
+    
+    func configureSearchBar() {
+        searchBar.placeholder = "좋아요 목록 검색"
+        searchBar.delegate = self
     }
     
 }
@@ -90,5 +105,12 @@ extension LikeListViewController: UITableViewDelegate, UITableViewDataSource {
         let data = list[indexPath.row]
         vc.data = ShopItems(title: data.productTitle, link: data.link, image: data.image, lprice: data.price, mallName: data.mallName, productId: data.productId)
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension LikeListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        list = repository.searchItem(searchText)
+        likeTableView.reloadData()
     }
 }

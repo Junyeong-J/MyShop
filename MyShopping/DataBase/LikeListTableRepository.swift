@@ -46,4 +46,15 @@ final class LikeListTableRepository {
             print("Realm Error")
         }
     }
+    
+    func searchItem(_ text: String) -> Results<LikeListTable> {
+        if text.isEmpty {
+            return fetchAll()
+        } else {
+            return realm.objects(LikeListTable.self).where {
+                $0.productTitle.contains(text, options: .caseInsensitive)
+            }
+        }
+    }
+    
 }
