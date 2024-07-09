@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         sleep(2)
         
-        let config = Realm.Configuration(schemaVersion: 1) { migration, oldSchemaVersion in
+        let config = Realm.Configuration(schemaVersion: 3) { migration, oldSchemaVersion in
             
-            if oldSchemaVersion < 1 {
+            if oldSchemaVersion < 3 {
             }
             
         }
