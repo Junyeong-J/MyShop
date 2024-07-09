@@ -11,6 +11,7 @@ import Toast
 
 class NicknameViewController: UIViewController {
     
+    let viewModel = NicknameViewModel()
     var randomImageName = ""
     var viewtype: ViewType = .new
     let ud = UserDefaultsManager.shared
@@ -37,6 +38,7 @@ class NicknameViewController: UIViewController {
         textField.delegate = self
         
         setView()
+        bindData()
     }
     
 }
@@ -158,6 +160,17 @@ extension NicknameViewController {
         return todayDate
     }
     
+    func bindData() {
+        viewModel.outputValidationText.bind { value in
+            self.stateLabel.text = value
+        }
+        
+        viewModel.outputValid.bind { value in
+            self.successButton.backgroundColor = value ? Color.myShopMainColor : Color.lightGray
+            self.successButton.isEnabled = value
+        }
+    }
+    
     @objc func backButtonClicked() {
         navigationController?.popViewController(animated: true)
     }
@@ -204,60 +217,7 @@ extension NicknameViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
-        guard let text = textField.text else {
-            self.view.makeToast("텍스트 필드에 잘못 입력되었습니다.")
-            return
-        }
-        
-        do { try requestNickname(text: text)
-            stateLabel.text = NicknameError.correct.eachError
-            changeButton(isEnabled: true)
-        } catch let error as NicknameError{
-            stateLabel.text = error.eachError
-            changeButton(isEnabled: false)
-        } catch {
-            self.view.makeToast("텍스트 필드에 잘못 입력되었습니다.")
-            changeButton(isEnabled: false)
-        }
-    }
-    
-    func requestNickname(text: String) throws {
-        if !textLength(text: text) {
-            throw NicknameError.count
-        }
-        
-        if text.range(of: "\\d", options: .regularExpression) != nil {
-            throw NicknameError.number
-        }
-        
-        if text.contains("@") {
-            throw NicknameError.at
-        }
-        
-        if text.contains("#") {
-            throw NicknameError.hash
-        }
-        
-        if text.contains("$") {
-            throw NicknameError.dollar
-        }
-        
-        if text.contains("%") {
-            throw NicknameError.percent
-        }
-        
-        if text.contains("%") {
-            throw NicknameError.percent
-        }
-    }
-    
-    func textLength(text: String) -> Bool {
-        return text.count >= 2 && text.count < 10
-    }
-    
-    func changeButton(isEnabled: Bool) {
-        successButton.isEnabled = isEnabled
-        successButton.backgroundColor = isEnabled ? Color.myShopMainColor : Color.lightGray
+        viewModel.inputNickname.value = textField.text
     }
     
 }

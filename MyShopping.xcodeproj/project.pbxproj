@@ -71,6 +71,8 @@
 		72154D962C3A744000EEF679 /* LikeRealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154D952C3A744000EEF679 /* LikeRealmModel.swift */; };
 		72154D982C3A763300EEF679 /* LikeListTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72154D972C3A763300EEF679 /* LikeListTableRepository.swift */; };
 		721BE0A02C2186AB00428CF8 /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721BE09F2C2186AB00428CF8 /* ValidationError.swift */; };
+		724FC77D2C3D9CB000CDA561 /* NicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC77C2C3D9CB000CDA561 /* NicknameViewModel.swift */; };
+		724FC77F2C3D9CC000CDA561 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724FC77E2C3D9CC000CDA561 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -146,6 +148,8 @@
 		72154D952C3A744000EEF679 /* LikeRealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeRealmModel.swift; sourceTree = "<group>"; };
 		72154D972C3A763300EEF679 /* LikeListTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListTableRepository.swift; sourceTree = "<group>"; };
 		721BE09F2C2186AB00428CF8 /* ValidationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationError.swift; sourceTree = "<group>"; };
+		724FC77C2C3D9CB000CDA561 /* NicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicknameViewModel.swift; sourceTree = "<group>"; };
+		724FC77E2C3D9CC000CDA561 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 		720710B72C1AD8EE00DEB707 /* MyShopping */ = {
 			isa = PBXGroup;
 			children = (
+				724FC77B2C3D9C8B00CDA561 /* ViewModel */,
 				72154D942C3A742400EEF679 /* DataBase */,
 				72154D842C3A5F4900EEF679 /* Base */,
 				72154C852C28361300EEF679 /* NetworkBasic */,
@@ -358,6 +363,15 @@
 			path = DataBase;
 			sourceTree = "<group>";
 		};
+		724FC77B2C3D9C8B00CDA561 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				724FC77C2C3D9CB000CDA561 /* NicknameViewModel.swift */,
+				724FC77E2C3D9CC000CDA561 /* Observable.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,6 +464,7 @@
 			files = (
 				720710EB2C1B269B00DEB707 /* ResourceFont.swift in Sources */,
 				720710D42C1AF60E00DEB707 /* ResourceColor.swift in Sources */,
+				724FC77D2C3D9CB000CDA561 /* NicknameViewModel.swift in Sources */,
 				720710F52C1C1FA700DEB707 /* ProfileCollectionViewCell.swift in Sources */,
 				7207112E2C1F3BBA00DEB707 /* LikeButton.swift in Sources */,
 				720710FB2C1C80BA00DEB707 /* TabBarController.swift in Sources */,
@@ -458,6 +473,7 @@
 				720710B92C1AD8EE00DEB707 /* AppDelegate.swift in Sources */,
 				72154D982C3A763300EEF679 /* LikeListTableRepository.swift in Sources */,
 				720710D12C1AF4EB00DEB707 /* PointButton.swift in Sources */,
+				724FC77F2C3D9CC000CDA561 /* Observable.swift in Sources */,
 				7207110F2C1DE52F00DEB707 /* SettingTableViewCell.swift in Sources */,
 				72154C872C28364D00EEF679 /* NaverShopManager.swift in Sources */,
 				720711052C1D6DDB00DEB707 /* EmptyImage.swift in Sources */,
